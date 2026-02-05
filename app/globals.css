@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   BRIGHTWAY HOME CARE - WORLD CLASS DESIGN SYSTEM
+   ============================================ */
+
+@theme {
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Brand Colors */
+  --color-blue-800: #1e3a8a;
+  --color-blue-700: #1d4ed8;
+  --color-blue-600: #2563eb;
+  --color-blue-500: #3b82f6;
+  --color-blue-100: #dbeafe;
+  --color-blue-50: #eff6ff;
+
+  --color-teal-400: #2dd4bf;
+  --color-teal-300: #5eead4;
+  --color-teal-200: #99f6e4;
+  --color-teal-100: #ccfbf1;
+  --color-teal-50: #f0fdfa;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Light Theme - Default */
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
+
+  /* Primary: Blue 800 */
+  --primary: #1e3a8a;
+  --primary-foreground: #ffffff;
+
+  /* Secondary: Teal */
+  --secondary: #f0fdfa;
+  --secondary-foreground: #134e4a;
+
+  --muted: #f9fafb;
+  --muted-foreground: #6b7280;
+
+  /* Accent: Teal 400 */
+  --accent: #2dd4bf;
+  --accent-foreground: #134e4a;
+
+  --destructive: #dc2626;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #1e3a8a;
+
+  /* Chart Colors */
+  --chart-1: #1e3a8a;
+  --chart-2: #2dd4bf;
+  --chart-3: #3b82f6;
+  --chart-4: #5eead4;
+  --chart-5: #1d4ed8;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-blue-800);
+}
+
+/* ============================================
+   COMPONENT STYLES
+   ============================================ */
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-blue-800 text-white px-8 py-4 rounded-full font-semibold
+           hover:bg-blue-700 transition-all duration-300
+           shadow-lg hover:shadow-xl hover:-translate-y-0.5
+           inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-blue-800 border-2 border-blue-800 px-8 py-4 rounded-full font-semibold
+           hover:bg-blue-50 transition-all duration-300
+           inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-accent {
+    @apply bg-teal-400 text-blue-800 px-8 py-4 rounded-full font-semibold
+           hover:bg-teal-300 transition-all duration-300
+           shadow-lg hover:shadow-xl hover:-translate-y-0.5
+           inline-flex items-center justify-center gap-2;
+  }
+
+  /* Layout */
+  .section-padding {
+    @apply py-20 md:py-28 px-4 md:px-8 lg:px-16;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto px-4 md:px-6;
+  }
+
+  /* Section Headers */
+  .section-header {
+    @apply text-center mb-16;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-blue-800 mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600 max-w-2xl mx-auto;
+  }
+
+  /* Cards */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  .feature-icon {
+    @apply w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-300
+           flex items-center justify-center text-2xl shadow-lg;
+  }
+
+  /* ============================================
+     BACKGROUND PATTERNS
+     ============================================ */
+
+  /* Circular Gradient Pattern */
+  .bg-circular-pattern {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  }
+
+  .bg-circular-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(45, 212, 191, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(30, 58, 138, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(94, 234, 212, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.05) 0%, transparent 35%),
+      radial-gradient(circle at 20% 80%, rgba(45, 212, 191, 0.08) 0%, transparent 35%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bg-circular-pattern > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Decorative Circles */
+  .bg-decorative-circles {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-decorative-circles::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: -300px;
+    right: -200px;
+    background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  .bg-decorative-circles::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    bottom: -200px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(30, 58, 138, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  /* Hero Gradient */
+  .hero-gradient {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #2563eb 100%);
+  }
+
+  .hero-gradient-overlay {
+    background:
+      radial-gradient(circle at 20% 50%, rgba(45, 212, 191, 0.2) 0%, transparent 40%),
+      radial-gradient(circle at 80% 20%, rgba(94, 234, 212, 0.15) 0%, transparent 35%),
+      radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
+  }
+
+  /* Trust Strip Gradient */
+  .trust-strip-gradient {
+    background: linear-gradient(90deg, #1e3a8a 0%, #1d4ed8 100%);
+  }
+
+  /* Dot Pattern */
+  .bg-dots {
+    background-image: radial-gradient(rgba(30, 58, 138, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Glass Effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Trust Badge */
+  .trust-badge {
+    @apply bg-white rounded-2xl p-6 shadow-lg border border-gray-100
+           flex flex-col items-center text-center gap-3
+           transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  /* Service Card */
+  .service-card {
+    @apply bg-white rounded-3xl p-8 shadow-lg border-2 border-gray-100
+           transition-all duration-300 hover:border-teal-400
+           hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  /* Feature Card */
+  .feature-card {
+    @apply bg-white rounded-3xl p-8 shadow-lg
+           transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(45, 212, 191, 0.2) 0%, transparent 40%),
+      radial-gradient(circle at 80% 30%, rgba(94, 234, 212, 0.15) 0%, transparent 35%);
+    pointer-events: none;
+  }
+
+  /* Premium CTA Gradient - World Class */
+  .cta-premium-gradient {
+    background:
+      linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #1d4ed8 70%, #2563eb 100%);
+  }
+
+  .cta-premium-overlay {
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(45, 212, 191, 0.25) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 60%, rgba(94, 234, 212, 0.2) 0%, transparent 45%),
+      radial-gradient(ellipse 50% 30% at 50% 80%, rgba(45, 212, 191, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 25%),
+      radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
+  }
+
+  /* Animated Teal Glow */
+  .teal-glow {
+    box-shadow: 0 0 60px rgba(45, 212, 191, 0.4), 0 0 100px rgba(45, 212, 191, 0.2);
+  }
+
+  /* Grid Pattern Overlay */
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Animated Gradient Ring */
+  @keyframes gradient-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .gradient-ring {
+    animation: gradient-rotate 20s linear infinite;
+  }
+
+  /* Shimmer Effect */
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .shimmer-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  /* Animated Gradient Border */
+  .gradient-border {
+    position: relative;
+    background: white;
+    border-radius: 1.5rem;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #2dd4bf, #1e3a8a, #5eead4);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .gradient-border:hover::before {
+    opacity: 1;
+  }
+
+  /* Text Gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2dd4bf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Hero icon - pop-in then gentle bounce */
+  .hero-icon {
+    opacity: 0;
+    animation:
+      hero-pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+      hero-bounce 2.5s ease-in-out 1s infinite;
+  }
+
+  @keyframes hero-pop-in {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    70% {
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes hero-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .hero-icon:hover {
+    animation-play-state: paused;
+    transform: scale(1.15);
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+}
+
+/* ============================================
+   THEME CONFIGURATION (shadcn)
+   ============================================ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
