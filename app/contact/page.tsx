@@ -93,6 +93,7 @@ const whyChooseUs = [
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const {
     register,
@@ -111,14 +112,37 @@ export default function ContactPage() {
   })
 
   const onSubmit = async (data: ContactFormData) => {
-    // Simulate API call - replace with actual API integration
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    console.log('Form submitted:', data)
-    setSubmitted(true)
+    setSubmitError(null)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message')
+      }
+
+      setSubmitted(true)
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'An unexpected error occurred. Please try again or call us directly.'
+      )
+    }
   }
 
   const handleReset = () => {
     setSubmitted(false)
+    setSubmitError(null)
     reset()
   }
 
@@ -289,6 +313,19 @@ export default function ContactPage() {
                 <Card className="shadow-2xl border-0 overflow-hidden">
                   <div className="h-2 bg-gradient-to-r from-blue-500 via-teal-400 to-blue-500" />
                   <CardContent className="p-8">
+                    {submitError && (
+                      <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3" role="alert">
+                        <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-red-700 font-medium">Failed to send message</p>
+                          <p className="text-red-600 text-sm mt-1">{submitError}</p>
+                          <p className="text-red-600 text-sm mt-2">
+                            You can also reach us at{' '}
+                            <a href="tel:+18477459930" className="underline font-medium">+1 (847) 745-9930</a>
+                          </p>
+                        </div>
+                      </div>
+                    )}
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">

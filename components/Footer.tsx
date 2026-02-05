@@ -214,9 +214,22 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center">
                 <Heart className="w-4 h-4 text-white fill-current" />
               </div>
-              <p className="text-gray-400 text-sm">
-                &copy; {new Date().getFullYear()} <span className="text-white font-medium">Brightway Home Care LLC</span>. All rights reserved.
-              </p>
+              <div className="text-gray-400 text-sm">
+                <p>
+                  &copy; {new Date().getFullYear()} <span className="text-white font-medium">Brightway Home Care LLC</span>. All rights reserved.
+                </p>
+                <p className="mt-1">
+                  Developed by{' '}
+                  <a
+                    href="https://shaunsoftwarehub.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shaun-soft"
+                  >
+                    Shaun Software Hub
+                  </a>
+                </p>
+              </div>
             </div>
             <div className="flex items-center gap-4 text-sm">
               <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full">

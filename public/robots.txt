@@ -1,0 +1,17 @@
+# Brightway Home Care LLC - Robots.txt
+# https://brightwayhomecare.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://brightwayhomecare.com/sitemap.xml
+
+# Crawl delay (optional - be nice to your server)
+Crawl-delay: 1
