@@ -49,44 +49,84 @@ const homeGallery = [
   },
 ]
 
+// Services with unique color themes for visual distinction
 const services = [
   {
     icon: Users,
     title: 'ADL Support',
-    description: 'Compassionate assistance with daily living activities including bathing, dressing, and personal care'
+    description: 'Compassionate assistance with daily living activities including bathing, dressing, and personal care',
+    gradient: 'from-teal-400 to-teal-600',
+    bgLight: 'bg-teal-50',
+    borderColor: 'border-teal-200 hover:border-teal-400',
+    textColor: 'text-teal-600',
+    number: '01',
   },
   {
     icon: Utensils,
     title: 'Meals & Nutrition',
-    description: 'Nutritious meal preparation tailored to dietary needs and personal preferences'
+    description: 'Nutritious meal preparation tailored to dietary needs and personal preferences',
+    gradient: 'from-blue-400 to-blue-600',
+    bgLight: 'bg-blue-50',
+    borderColor: 'border-blue-200 hover:border-blue-400',
+    textColor: 'text-blue-600',
+    number: '02',
   },
   {
     icon: Shield,
     title: 'Safety Supervision',
-    description: '24/7 monitoring and support in a secure, comfortable home environment'
+    description: '24/7 monitoring and support in a secure, comfortable home environment',
+    gradient: 'from-violet-400 to-violet-600',
+    bgLight: 'bg-violet-50',
+    borderColor: 'border-violet-200 hover:border-violet-400',
+    textColor: 'text-violet-600',
+    number: '03',
   },
   {
     icon: Activity,
     title: 'Medication Support',
-    description: 'Medication reminders and support to ensure proper health management'
+    description: 'Medication reminders and support to ensure proper health management',
+    gradient: 'from-rose-400 to-rose-600',
+    bgLight: 'bg-rose-50',
+    borderColor: 'border-rose-200 hover:border-rose-400',
+    textColor: 'text-rose-600',
+    number: '04',
   },
 ]
 
+// Who We Serve - Unique warm colors for each group
 const whoWeServe = [
   {
     icon: Star,
     title: 'Advanced Age',
-    description: 'Adults requiring support with daily living activities in their later years'
+    description: 'Adults requiring support with daily living activities in their later years',
+    gradient: 'from-amber-400 to-orange-500',
+    bgLight: 'bg-amber-50',
+    iconBg: 'from-amber-100 to-orange-100',
+    borderColor: 'border-amber-200 hover:border-amber-400',
+    textColor: 'text-amber-600',
+    accentColor: 'bg-amber-500',
   },
   {
     icon: Heart,
     title: 'Physical Disabilities',
-    description: 'Adults with mobility challenges or physical limitations needing assistance'
+    description: 'Adults with mobility challenges or physical limitations needing assistance',
+    gradient: 'from-rose-400 to-pink-500',
+    bgLight: 'bg-rose-50',
+    iconBg: 'from-rose-100 to-pink-100',
+    borderColor: 'border-rose-200 hover:border-rose-400',
+    textColor: 'text-rose-600',
+    accentColor: 'bg-rose-500',
   },
   {
     icon: Sparkles,
     title: 'Developmental Disabilities',
-    description: 'Adults with intellectual or developmental disabilities requiring supportive care'
+    description: 'Adults with intellectual or developmental disabilities requiring supportive care',
+    gradient: 'from-violet-400 to-purple-500',
+    bgLight: 'bg-violet-50',
+    iconBg: 'from-violet-100 to-purple-100',
+    borderColor: 'border-violet-200 hover:border-violet-400',
+    textColor: 'text-violet-600',
+    accentColor: 'bg-violet-500',
   },
 ]
 
@@ -214,73 +254,160 @@ export default function HomePage() {
       </section>
 
 
-      {/* Services Section */}
-      <section className="section-padding bg-circular-pattern">
-        <div className="container-max">
+      {/* Services Section - Premium Hybrid Design */}
+      <section className="section-padding bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden">
+        {/* Background Decorations */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-teal-100/30 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container-max relative">
+          {/* Section Header */}
           <div className="section-header">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 border-0">Our Services</Badge>
+            <Badge className="mb-4 bg-gradient-to-r from-blue-100 to-teal-100 text-blue-800 border-0 px-4 py-1.5">
+              <Sparkles className="w-3.5 h-3.5 mr-1.5" />
+              Our Services
+            </Badge>
             <h2 className="section-title">Comprehensive Care Services</h2>
             <p className="section-subtitle">
               Tailored support designed to meet individual needs in a warm, home-like environment
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Services Grid - Premium Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="service-card border-2 group">
-                <CardContent className="p-8">
-                  <div className="feature-icon mb-6 group-hover:scale-110 transition-transform">
-                    <service.icon className="w-7 h-7 text-blue-800" />
+              <div
+                key={index}
+                className={`group relative bg-white rounded-2xl border-2 ${service.borderColor} p-6 lg:p-7 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden`}
+              >
+                {/* Background Number - Design Element */}
+                <span className="absolute -right-4 -top-6 text-[120px] font-black text-gray-100/60 leading-none select-none pointer-events-none group-hover:text-gray-100 transition-colors duration-500">
+                  {service.number}
+                </span>
+
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Gradient Icon Circle */}
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-blue-800 mb-3 font-[family-name:var(--font-heading)]">
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-[family-name:var(--font-heading)] group-hover:text-blue-800 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
                     {service.description}
                   </p>
-                </CardContent>
-              </Card>
+
+                  {/* Bottom Accent Line */}
+                  <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl`} />
+                </div>
+
+                {/* Hover Glow Effect */}
+                <div className={`absolute inset-0 ${service.bgLight} opacity-0 group-hover:opacity-50 transition-opacity duration-500 rounded-2xl`} />
+              </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button asChild className="btn-primary">
+          {/* CTA Button */}
+          <div className="text-center mt-14">
+            <Button asChild className="btn-primary group px-8 py-6 text-base">
               <Link href="/services" className="flex items-center gap-2">
                 View All Services
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Who We Serve */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-max">
+      {/* Who We Serve - Warm & Welcoming Design */}
+      <section className="section-padding bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        {/* Background Decorations */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-amber-100/40 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-rose-100/40 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 right-10 w-48 h-48 bg-violet-100/40 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container-max relative">
+          {/* Section Header */}
           <div className="section-header">
-            <Badge className="mb-4 bg-teal-100 text-teal-700 border-0">Who We Serve</Badge>
+            <Badge className="mb-4 bg-gradient-to-r from-amber-100 via-rose-100 to-violet-100 text-gray-700 border-0 px-4 py-1.5">
+              <Heart className="w-3.5 h-3.5 mr-1.5 text-rose-500" />
+              Who We Serve
+            </Badge>
             <h2 className="section-title">Compassionate Care for Diverse Needs</h2>
             <p className="section-subtitle">
               We provide personalized support for adults who need assistance with daily living
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {whoWeServe.map((item, index) => (
-              <Card key={index} className="feature-card border-l-4 border-l-teal-400 border-t-0 border-r-0 border-b-0">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-400/20 to-teal-300/20 flex items-center justify-center mb-6">
-                    <item.icon className="w-7 h-7 text-teal-600" />
+              <div
+                key={index}
+                className={`group relative bg-white rounded-3xl border-2 ${item.borderColor} p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden`}
+              >
+                {/* Top Accent Bar */}
+                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${item.gradient}`} />
+
+                {/* Floating Icon Circle */}
+                <div className="relative mb-6">
+                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <item.icon className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-blue-800 mb-3 font-[family-name:var(--font-heading)]">
+                  {/* Decorative Ring */}
+                  <div className={`absolute -inset-2 rounded-3xl bg-gradient-to-br ${item.iconBg} -z-10 opacity-60`} />
+                </div>
+
+                {/* Content */}
+                <div className="relative">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-[family-name:var(--font-heading)] group-hover:text-blue-800 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed mb-5">
                     {item.description}
                   </p>
-                </CardContent>
-              </Card>
+
+                  {/* Learn More Link */}
+                  <Link
+                    href="/services"
+                    className={`inline-flex items-center gap-2 ${item.textColor} font-semibold text-sm group/link hover:gap-3 transition-all`}
+                  >
+                    Learn More
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                  </Link>
+                </div>
+
+                {/* Hover Background Glow */}
+                <div className={`absolute inset-0 ${item.bgLight} opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-3xl -z-10`} />
+              </div>
             ))}
+          </div>
+
+          {/* Bottom Trust Statement */}
+          <div className="mt-14 text-center">
+            <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
+              <div className="flex -space-x-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                  <Star className="w-4 h-4 text-white" />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center">
+                  <Heart className="w-4 h-4 text-white" />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center">
+                  <Sparkles className="w-4 h-4 text-white" />
+                </div>
+              </div>
+              <span className="text-gray-700 font-medium">Every person deserves dignified care</span>
+            </div>
           </div>
         </div>
       </section>
@@ -348,8 +475,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Bento Grid Gallery */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+          {/* Bento Grid Gallery - Optimized for screen fit */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5 auto-rows-[200px] md:auto-rows-[220px] lg:auto-rows-[240px]">
             {homeGallery.map((item, index) => (
               <Link
                 key={index}
@@ -358,37 +485,40 @@ export default function HomePage() {
                   index === 0 ? 'col-span-2 row-span-2' : ''
                 }`}
               >
-                {/* Image Container */}
-                <div className={`relative ${index === 0 ? 'aspect-square' : 'aspect-[4/3]'}`}>
+                {/* Image Container - Full coverage */}
+                <div className="relative w-full h-full">
                   <Image
                     src={item.src}
                     alt={item.alt}
                     fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     sizes={index === 0 ? '(max-width: 1024px) 100vw, 50vw' : '(max-width: 1024px) 50vw, 25vw'}
+                    priority={index === 0}
                   />
 
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  {/* Subtle gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-blue-800/0 group-hover:bg-blue-800/30 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-blue-800/0 group-hover:bg-blue-800/20 transition-all duration-500" />
 
                   {/* Zoom Icon - Appears on Hover */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-75 group-hover:scale-100 shadow-xl">
-                    <ZoomIn className="w-6 h-6 text-blue-800" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white/95 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-75 group-hover:scale-100 shadow-xl">
+                    <ZoomIn className="w-5 h-5 lg:w-6 lg:h-6 text-blue-800" />
                   </div>
 
-                  {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
-                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                      <h3 className={`font-bold text-white drop-shadow-lg ${
-                        index === 0 ? 'text-2xl lg:text-3xl mb-2' : 'text-lg mb-1'
+                  {/* Content Overlay with Blur Background */}
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 lg:p-5">
+                    <div className={`backdrop-blur-md bg-black/40 rounded-xl transform translate-y-1 group-hover:translate-y-0 transition-all duration-500 ${
+                      index === 0 ? 'p-4 lg:p-5' : 'p-2.5 md:p-3'
+                    }`}>
+                      <h3 className={`font-bold text-white ${
+                        index === 0 ? 'text-xl md:text-2xl lg:text-3xl mb-1' : 'text-sm md:text-base lg:text-lg'
                       }`}>
                         {item.label}
                       </h3>
-                      <p className={`text-white/80 font-medium ${
-                        index === 0 ? 'text-base' : 'text-sm'
+                      <p className={`text-white/90 font-medium ${
+                        index === 0 ? 'text-sm md:text-base' : 'text-xs md:text-sm'
                       }`}>
                         {item.description}
                       </p>
