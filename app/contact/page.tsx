@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import emailjs from '@emailjs/browser'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -94,6 +95,7 @@ const whyChooseUs = [
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
+  const formRef = useRef<HTMLFormElement>(null)
 
   const {
     register,
@@ -115,28 +117,45 @@ export default function ContactPage() {
     setSubmitError(null)
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+      // EmailJS configuration from environment variables
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!
+      const notificationTemplateId = process.env.NEXT_PUBLIC_EMAILJS_NOTIFICATION_TEMPLATE_ID! // Sends to brightwayhomecarellc@gmail.com
+      const autoReplyTemplateId = process.env.NEXT_PUBLIC_EMAILJS_AUTOREPLY_TEMPLATE_ID! // Sends to form submitter
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
 
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to send message')
+      const templateParams = {
+        from_name: data.fullName,
+        email: data.email,
+        phone: data.phone,
+        inquiry_type: data.inquiryType || 'General Inquiry',
+        message: data.message,
       }
 
-      setSubmitted(true)
-    } catch (error) {
+      // Send both emails in parallel
+      const [notificationResult, autoReplyResult] = await Promise.all([
+        // 1. Notification email to business
+        emailjs.send(serviceId, notificationTemplateId, templateParams, publicKey),
+        // 2. Auto-reply to the person who submitted
+        emailjs.send(serviceId, autoReplyTemplateId, templateParams, publicKey),
+      ])
+
+      if (notificationResult.status === 200 && autoReplyResult.status === 200) {
+        setSubmitted(true)
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error: unknown) {
       console.error('Form submission error:', error)
-      setSubmitError(
-        error instanceof Error
-          ? error.message
-          : 'An unexpected error occurred. Please try again or call us directly.'
-      )
+
+      // Get detailed error message
+      let errorMessage = 'An unexpected error occurred. Please try again or call us directly.'
+      if (error instanceof Error) {
+        errorMessage = error.message
+      } else if (typeof error === 'object' && error !== null && 'text' in error) {
+        errorMessage = String((error as { text: string }).text)
+      }
+
+      setSubmitError(errorMessage)
     }
   }
 

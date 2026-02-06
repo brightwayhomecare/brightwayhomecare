@@ -1,5 +1,5 @@
 # Brightway Home Care LLC - Robots.txt
-# https://brightwayhomecare.com
+# https://brightwayhomecare.vercel.app
 
 # Allow all crawlers
 User-agent: *
@@ -11,7 +11,7 @@ Disallow: /_next/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://brightwayhomecare.com/sitemap.xml
+Sitemap: https://brightwayhomecare.vercel.app/sitemap.xml
 
 # Crawl delay (optional - be nice to your server)
 Crawl-delay: 1

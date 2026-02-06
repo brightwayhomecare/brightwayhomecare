@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     statusBarStyle: 'default',
     title: 'Brightway Home Care',
   },
+  other: {
+    'mobile-web-app-capable': 'yes',
+  },
   formatDetection: {
     telephone: true,
   },
@@ -63,9 +66,12 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add your verification codes when available
-    // google: 'your-google-verification-code',
-    // yandex: 'your-yandex-verification-code',
+    // Add your Google Search Console verification code
+    // 1. Go to https://search.google.com/search-console
+    // 2. Add your property (brightwayhomecare.vercel.app)
+    // 3. Choose "HTML tag" verification method
+    // 4. Copy the content value and paste below
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
   },
 }
 
