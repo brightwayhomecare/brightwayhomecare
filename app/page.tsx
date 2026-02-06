@@ -16,8 +16,38 @@ import {
   Star,
   ArrowRight,
   CheckCircle2,
-  Sparkles
+  Sparkles,
+  Camera,
+  ZoomIn
 } from 'lucide-react'
+
+// Gallery preview images for "A Welcoming Environment" section
+const homeGallery = [
+  {
+    src: '/images/Welcoming_Environment/sitting_room.jpg',
+    alt: 'Comfortable living room at Brightway Home Care',
+    label: 'Living Room',
+    description: 'Cozy gathering space',
+  },
+  {
+    src: '/images/Welcoming_Environment/bed_room.jpg',
+    alt: 'Private bedroom at Brightway Home Care',
+    label: 'Bedroom',
+    description: 'Restful private rooms',
+  },
+  {
+    src: '/images/Welcoming_Environment/kitchen_room.jpg',
+    alt: 'Modern kitchen at Brightway Home Care',
+    label: 'Kitchen',
+    description: 'Home-cooked meals',
+  },
+  {
+    src: '/images/Welcoming_Environment/garden.png',
+    alt: 'Beautiful garden at Brightway Home Care',
+    label: 'Garden',
+    description: 'Peaceful outdoor space',
+  },
+]
 
 const services = [
   {
@@ -303,37 +333,89 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Gallery Preview */}
+      {/* Gallery Preview - A Welcoming Environment */}
       <section className="section-padding bg-gray-50">
         <div className="container-max">
+          {/* Section Header */}
           <div className="section-header">
-            <Badge className="mb-4 bg-teal-100 text-teal-700 border-0">Our Home</Badge>
+            <Badge className="mb-4 bg-teal-100 text-teal-700 border-0">
+              <Camera className="w-3.5 h-3.5 mr-1.5" />
+              Our Home
+            </Badge>
             <h2 className="section-title">A Welcoming Environment</h2>
             <p className="section-subtitle">
               Take a peek at our comfortable and well-maintained home
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {['Living Room', 'Bedroom', 'Kitchen', 'Garden'].map((label, i) => (
-              <div
-                key={i}
-                className="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl flex items-center justify-center group hover:shadow-xl transition-all cursor-pointer overflow-hidden relative"
+          {/* Bento Grid Gallery */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            {homeGallery.map((item, index) => (
+              <Link
+                key={index}
+                href="/gallery"
+                className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ${
+                  index === 0 ? 'col-span-2 row-span-2' : ''
+                }`}
               >
-                <div className="absolute inset-0 bg-blue-800/0 group-hover:bg-blue-800/20 transition-colors" />
-                <div className="text-center">
-                  <Home className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                  <span className="text-gray-500 font-medium">{label}</span>
+                {/* Image Container */}
+                <div className={`relative ${index === 0 ? 'aspect-square' : 'aspect-[4/3]'}`}>
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    sizes={index === 0 ? '(max-width: 1024px) 100vw, 50vw' : '(max-width: 1024px) 50vw, 25vw'}
+                  />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-blue-800/0 group-hover:bg-blue-800/30 transition-all duration-500" />
+
+                  {/* Zoom Icon - Appears on Hover */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-75 group-hover:scale-100 shadow-xl">
+                    <ZoomIn className="w-6 h-6 text-blue-800" />
+                  </div>
+
+                  {/* Content Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
+                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className={`font-bold text-white drop-shadow-lg ${
+                        index === 0 ? 'text-2xl lg:text-3xl mb-2' : 'text-lg mb-1'
+                      }`}>
+                        {item.label}
+                      </h3>
+                      <p className={`text-white/80 font-medium ${
+                        index === 0 ? 'text-base' : 'text-sm'
+                      }`}>
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Corner Badge for Featured Image */}
+                  {index === 0 && (
+                    <div className="absolute top-4 left-4">
+                      <span className="inline-flex items-center gap-1.5 bg-teal-400/90 backdrop-blur-sm text-blue-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                        <Home className="w-3.5 h-3.5" />
+                        Featured
+                      </span>
+                    </div>
+                  )}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <Button asChild variant="outline" className="btn-secondary">
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <Button asChild className="btn-primary group">
               <Link href="/gallery" className="flex items-center gap-2">
+                <Camera className="w-5 h-5" />
                 View Full Gallery
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
