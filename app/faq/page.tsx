@@ -39,7 +39,7 @@ const faqs = [
     question: 'What is an Adult Family Home?',
     answer: 'An Adult Family Home (AFH) is a licensed residential care facility that provides 24-hour supportive care in a home-like setting. Unlike large nursing facilities, AFHs serve a small number of residents (typically 3-4), allowing for more personalized attention and a family-like atmosphere.',
     icon: Home,
-    color: 'from-blue-400 to-blue-500',
+    color: 'from-blue-600 to-blue-800',
   },
   {
     id: 2,
@@ -63,7 +63,7 @@ const faqs = [
     question: 'Is Brightway Home Care licensed?',
     answer: 'Yes, Brightway Home Care LLC is a fully licensed Adult Family Home in the State of Wisconsin. We comply with all state regulations and undergo regular inspections to ensure the highest standards of care and safety.',
     icon: Shield,
-    color: 'from-emerald-400 to-emerald-500',
+    color: 'from-blue-600 to-blue-800',
   },
   {
     id: 5,
@@ -71,7 +71,7 @@ const faqs = [
     question: 'How many residents do you care for?',
     answer: 'We maintain a small home setting with 3-4 beds maximum. This allows us to provide highly personalized, one-on-one attention that larger facilities cannot offer. Our low resident-to-caregiver ratio ensures each person receives the care and attention they deserve.',
     icon: Users,
-    color: 'from-violet-400 to-violet-500',
+    color: 'from-teal-400 to-teal-500',
   },
   {
     id: 6,
@@ -79,7 +79,7 @@ const faqs = [
     question: 'What are the costs and payment options?',
     answer: 'Our rates are competitive and vary based on individual care needs. We accept private pay and can work with families to explore various funding options. We recommend scheduling a consultation to discuss your specific situation and receive detailed pricing information.',
     icon: DollarSign,
-    color: 'from-amber-400 to-amber-500',
+    color: 'from-rose-400 to-rose-500',
   },
   {
     id: 7,
@@ -87,7 +87,7 @@ const faqs = [
     question: 'Can I visit before making a decision?',
     answer: 'Absolutely! We encourage families to schedule a tour of our home. This gives you the opportunity to see our facilities, meet our caring staff, and ask any questions you may have. Contact us to arrange a visit at your convenience.',
     icon: Calendar,
-    color: 'from-cyan-400 to-cyan-500',
+    color: 'from-blue-600 to-blue-800',
   },
   {
     id: 8,
@@ -95,7 +95,7 @@ const faqs = [
     question: 'What is the admission process?',
     answer: 'The admission process begins with an initial inquiry and tour. We then conduct a comprehensive assessment to understand care needs and ensure we can provide appropriate support. If it\'s a good fit, we work with families to complete necessary paperwork and coordinate a smooth transition.',
     icon: Clock,
-    color: 'from-indigo-400 to-indigo-500',
+    color: 'from-teal-400 to-teal-500',
   },
   {
     id: 9,
@@ -103,7 +103,7 @@ const faqs = [
     question: 'Do you provide respite care?',
     answer: 'Yes, we offer respite care services for families who need temporary relief from caregiving responsibilities. This can be arranged for short-term stays, giving primary caregivers a much-needed break while ensuring their loved one receives quality care.',
     icon: Heart,
-    color: 'from-pink-400 to-pink-500',
+    color: 'from-rose-400 to-rose-500',
   },
   {
     id: 10,
@@ -111,7 +111,7 @@ const faqs = [
     question: 'How do you handle medical emergencies?',
     answer: 'Our staff is trained in emergency response procedures. We maintain close communication with residents\' healthcare providers and have protocols in place for medical emergencies, including immediate contact with emergency services when needed.',
     icon: Stethoscope,
-    color: 'from-red-400 to-red-500',
+    color: 'from-blue-600 to-blue-800',
   },
 ]
 
@@ -139,21 +139,21 @@ export default function FAQPage() {
 
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-[10%] w-64 h-64 bg-violet-400/10 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-20 left-[5%] w-80 h-80 bg-purple-300/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-20 right-[10%] w-64 h-64 bg-teal-400/10 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute bottom-20 left-[5%] w-80 h-80 bg-blue-300/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
           <div className="absolute top-1/3 left-1/4 w-2 h-2 bg-white/30 rounded-full animate-float" />
-          <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-violet-300/40 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-teal-300/40 rounded-full animate-float" style={{ animationDelay: '1s' }} />
         </div>
 
         <div className="relative container-max py-20 text-center">
           <Badge className="mb-6 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-5 py-2.5 text-sm">
-            <HelpCircle className="w-4 h-4 mr-2 text-violet-300" />
+            <HelpCircle className="w-4 h-4 mr-2 text-teal-300" />
             Got Questions? We Have Answers
           </Badge>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-heading)]">
             <span className="text-white">Frequently Asked</span>{' '}
-            <span className="text-violet-300 drop-shadow-[0_0_30px_rgba(196,181,253,0.5)]">Questions</span>
+            <span className="text-teal-300 drop-shadow-[0_0_30px_rgba(94,234,212,0.5)]">Questions</span>
           </h1>
 
           <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto mb-10">
@@ -169,7 +169,7 @@ export default function FAQPage() {
                 placeholder="Search questions..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-14 pl-14 pr-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-transparent transition-all"
+                className="w-full h-14 pl-14 pr-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all"
               />
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function FAQPage() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
                   activeCategory === category.id
-                    ? 'bg-gradient-to-r from-violet-500 to-violet-600 text-white shadow-lg shadow-violet-200'
+                    ? 'bg-gradient-to-r from-teal-400 to-teal-500 text-white shadow-lg shadow-teal-200'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
@@ -217,7 +217,7 @@ export default function FAQPage() {
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="text-violet-600 text-sm font-medium hover:text-violet-700"
+                  className="text-teal-600 text-sm font-medium hover:text-teal-700"
                 >
                   Clear search
                 </button>
@@ -260,10 +260,10 @@ export default function FAQPage() {
 
                         {/* Toggle Icon */}
                         <div className={`w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                          openFaq === faq.id ? 'bg-violet-100 rotate-180' : ''
+                          openFaq === faq.id ? 'bg-teal-100 rotate-180' : ''
                         }`}>
                           <ChevronDown className={`w-5 h-5 transition-colors ${
-                            openFaq === faq.id ? 'text-violet-600' : 'text-gray-400'
+                            openFaq === faq.id ? 'text-teal-600' : 'text-gray-400'
                           }`} />
                         </div>
                       </div>
@@ -291,8 +291,8 @@ export default function FAQPage() {
             {/* No Results */}
             {filteredFaqs.length === 0 && (
               <div className="text-center py-16">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gray-100 flex items-center justify-center">
-                  <Search className="w-10 h-10 text-gray-400" />
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-teal-50 flex items-center justify-center">
+                  <Search className="w-10 h-10 text-teal-400" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">No questions found</h3>
                 <p className="text-gray-500 mb-6">Try adjusting your search or filter</p>
@@ -301,7 +301,7 @@ export default function FAQPage() {
                     setSearchQuery('')
                     setActiveCategory('all')
                   }}
-                  className="bg-violet-500 hover:bg-violet-600 text-white"
+                  className="bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-300 hover:to-teal-400 text-white"
                 >
                   Reset Filters
                 </Button>
@@ -314,29 +314,29 @@ export default function FAQPage() {
       {/* Still Have Questions CTA */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <Card className="max-w-4xl mx-auto border-0 shadow-2xl overflow-hidden bg-gradient-to-br from-violet-600 to-purple-700">
+          <Card className="max-w-4xl mx-auto border-0 shadow-2xl overflow-hidden bg-gradient-to-br from-blue-700 to-blue-900">
             <CardContent className="p-0">
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Left Content */}
                 <div className="p-10 md:p-12">
-                  <Badge className="mb-6 bg-white/20 text-white border-0 px-4 py-2">
+                  <Badge className="mb-6 bg-teal-400/20 text-teal-300 border-0 px-4 py-2">
                     <MessageCircle className="w-4 h-4 mr-2" />
                     We&apos;re Here to Help
                   </Badge>
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-[family-name:var(--font-heading)]">
                     Still Have Questions?
                   </h2>
-                  <p className="text-violet-100 mb-8 leading-relaxed">
+                  <p className="text-blue-100 mb-8 leading-relaxed">
                     We&apos;re here to help. Contact us directly and we&apos;ll be happy to answer any questions you may have about our care services.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button asChild className="bg-white hover:bg-gray-100 text-violet-700 font-bold px-6">
+                    <Button asChild className="bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-300 hover:to-teal-400 text-blue-900 font-bold px-6">
                       <a href="tel:+18477459930" className="flex items-center gap-2">
                         <Phone className="w-5 h-5" />
                         Call Us Now
                       </a>
                     </Button>
-                    <Button asChild variant="outline" className="border-white/30 text-white hover:bg-white/10 px-6">
+                    <Button asChild className="bg-transparent border-2 border-teal-400 text-teal-300 hover:bg-teal-400/20 hover:text-white font-semibold px-6">
                       <Link href="/contact" className="flex items-center gap-2">
                         Contact Form
                         <ArrowRight className="w-5 h-5" />
@@ -350,23 +350,23 @@ export default function FAQPage() {
                   <div className="relative">
                     {/* Decorative circles */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-48 h-48 rounded-full border border-white/20 animate-pulse-slow" />
+                      <div className="w-48 h-48 rounded-full border border-teal-400/20 animate-pulse-slow" />
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-32 h-32 rounded-full border border-white/30 animate-pulse-slow" style={{ animationDelay: '0.5s' }} />
+                      <div className="w-32 h-32 rounded-full border border-teal-400/30 animate-pulse-slow" style={{ animationDelay: '0.5s' }} />
                     </div>
 
                     {/* Center icon */}
-                    <div className="relative w-24 h-24 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <Sparkles className="w-12 h-12 text-white" />
+                    <div className="relative w-24 h-24 rounded-2xl bg-teal-400/20 backdrop-blur-sm flex items-center justify-center">
+                      <Sparkles className="w-12 h-12 text-teal-300" />
                     </div>
 
                     {/* Floating icons */}
-                    <div className="absolute -top-4 -right-4 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center animate-float">
-                      <Phone className="w-6 h-6 text-white" />
+                    <div className="absolute -top-4 -right-4 w-12 h-12 rounded-xl bg-rose-400/20 flex items-center justify-center animate-float">
+                      <Phone className="w-6 h-6 text-rose-300" />
                     </div>
-                    <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center animate-float" style={{ animationDelay: '0.5s' }}>
-                      <MessageCircle className="w-6 h-6 text-white" />
+                    <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-xl bg-teal-400/20 flex items-center justify-center animate-float" style={{ animationDelay: '0.5s' }}>
+                      <MessageCircle className="w-6 h-6 text-teal-300" />
                     </div>
                   </div>
                 </div>

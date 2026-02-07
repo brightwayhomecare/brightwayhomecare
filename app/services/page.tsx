@@ -28,34 +28,39 @@ export const metadata: Metadata = {
   description: 'Explore our residential care services including ADL support, meal preparation, medication reminders, safety supervision, and respite care in Madison, WI.',
 }
 
+// Services with brand-compliant colors (Blue 800, Teal, Rose)
 const services = [
   {
     icon: Users,
     title: 'Assistance with ADLs',
     description: 'Support with activities of daily living including bathing, dressing, grooming, and personal hygiene to help residents maintain dignity and comfort.',
     features: ['Bathing & Showering', 'Dressing Assistance', 'Personal Grooming', 'Hygiene Support'],
-    color: 'from-blue-400 to-blue-500',
+    color: 'from-teal-400 to-teal-500',
+    bgLight: 'bg-teal-50',
   },
   {
     icon: Utensils,
     title: 'Meal Preparation & Nutrition',
     description: 'Nutritious home-cooked meals tailored to dietary needs and preferences, ensuring proper nutrition and enjoyable dining experiences.',
     features: ['Custom Meal Plans', 'Dietary Accommodations', 'Nutritious Home Cooking', 'Hydration Support'],
-    color: 'from-emerald-400 to-emerald-500',
+    color: 'from-teal-400 to-teal-500',
+    bgLight: 'bg-teal-50',
   },
   {
     icon: Pill,
     title: 'Medication Reminders',
     description: 'Timely medication reminders and support (as permitted) to help residents stay on track with their health regimens.',
     features: ['Scheduled Reminders', 'Medication Tracking', 'Health Monitoring', 'Care Coordination'],
-    color: 'from-violet-400 to-violet-500',
+    color: 'from-blue-600 to-blue-800',
+    bgLight: 'bg-blue-50',
   },
   {
     icon: Shield,
     title: 'Safety Supervision',
     description: '24/7 monitoring and supervision to ensure a safe living environment, with staff available around the clock for any needs.',
     features: ['24/7 Staff Presence', 'Emergency Response', 'Fall Prevention', 'Secure Environment'],
-    color: 'from-amber-400 to-amber-500',
+    color: 'from-blue-600 to-blue-800',
+    bgLight: 'bg-blue-50',
   },
   {
     icon: Activity,
@@ -63,13 +68,15 @@ const services = [
     description: 'Assistance with mobility, transfers, and personal care needs to support residents in their daily routines.',
     features: ['Transfer Assistance', 'Mobility Support', 'Exercise Encouragement', 'Physical Comfort'],
     color: 'from-rose-400 to-rose-500',
+    bgLight: 'bg-rose-50',
   },
   {
     icon: HandHeart,
     title: 'Respite Care Options',
     description: 'Short-term care services to provide relief for family caregivers while ensuring their loved ones receive quality support.',
     features: ['Short-Term Stays', 'Caregiver Relief', 'Flexible Scheduling', 'Full Care Services'],
-    color: 'from-teal-400 to-teal-500',
+    color: 'from-rose-400 to-rose-500',
+    bgLight: 'bg-rose-50',
   },
 ]
 
@@ -197,11 +204,22 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Main Services Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-max">
+      {/* Main Services Section - Premium Brand-Compliant Design */}
+      <section className="section-padding bg-gradient-to-b from-gray-50 via-white to-teal-50/20 relative overflow-hidden">
+        {/* Background Decorations */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-teal-100/40 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-rose-100/20 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container-max relative">
+          {/* Section Header - Enhanced */}
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 border-0 px-4 py-2">
+            {/* Accent Line */}
+            <div className="w-16 h-1 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full mx-auto mb-6" />
+
+            <Badge className="mb-4 bg-teal-100 text-teal-700 border-0 px-4 py-2">
               <Star className="w-4 h-4 mr-2" />
               What We Offer
             </Badge>
@@ -213,45 +231,65 @@ export default function ServicesPage() {
             </p>
           </div>
 
+          {/* Services Grid - Premium Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card
+              <div
                 key={index}
-                className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden bg-white"
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-2"
               >
-                <CardContent className="p-0">
-                  {/* Card Header with Gradient */}
-                  <div className={`bg-gradient-to-r ${service.color} p-6 relative overflow-hidden`}>
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-                    <div className="relative flex items-center gap-4">
-                      <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                        <service.icon className="w-7 h-7 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-white font-[family-name:var(--font-heading)]">
-                        {service.title}
-                      </h3>
-                    </div>
-                  </div>
+                {/* Card Header with Gradient */}
+                <div className={`bg-gradient-to-r ${service.color} p-6 relative overflow-hidden`}>
+                  {/* Decorative Circle */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+                  <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
-                  {/* Card Body */}
-                  <div className="p-6">
-                    <p className="text-gray-600 leading-relaxed mb-6">
-                      {service.description}
-                    </p>
-                    <ul className="space-y-3">
-                      {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3 text-sm text-gray-600">
-                          <div className={`w-5 h-5 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center flex-shrink-0`}>
-                            <CheckCircle2 className="w-3 h-3 text-white" />
-                          </div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="relative flex items-center gap-4">
+                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white font-[family-name:var(--font-heading)]">
+                      {service.title}
+                    </h3>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+
+                {/* Card Body */}
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-3">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-center gap-3 text-sm text-gray-600 group/item hover:text-gray-900 transition-colors">
+                        <div className={`w-5 h-5 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center flex-shrink-0`}>
+                          <CheckCircle2 className="w-3 h-3 text-white" />
+                        </div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             ))}
+          </div>
+
+          {/* Bottom Trust Statement */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
+              <div className="flex -space-x-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center ring-2 ring-white">
+                  <Users className="w-4 h-4 text-white" />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center ring-2 ring-white">
+                  <Shield className="w-4 h-4 text-white" />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-rose-500 flex items-center justify-center ring-2 ring-white">
+                  <Heart className="w-4 h-4 text-white" />
+                </div>
+              </div>
+              <span className="text-gray-700 font-medium">Personalized care for every resident</span>
+            </div>
           </div>
         </div>
       </section>
@@ -292,64 +330,123 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Person-Centered Approach */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-max">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Image */}
-            <div className="relative order-2 lg:order-1">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+      {/* Person-Centered Approach - Premium Brand-Compliant Design */}
+      <section className="section-padding bg-gradient-to-b from-gray-50 via-white to-rose-50/20 relative overflow-hidden">
+        {/* Background Decorations */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 right-10 w-72 h-72 bg-teal-100/40 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-10 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container-max relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Image Area - Enhanced */}
+            <div className="relative order-2 lg:order-1 pt-8 pr-8 pb-8 pl-8">
+              {/* Decorative Ring Behind Image */}
+              <div className="absolute inset-8 bg-gradient-to-br from-teal-200/40 to-rose-200/40 rounded-[2rem] -z-10 -m-4" />
+
+              {/* Main Image */}
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <Image
                   src="/images/image_two.jpg"
                   alt="Person-centered care at Brightway Home Care"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-blue-900/10 to-transparent" />
               </div>
 
-              {/* Floating Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+              {/* Floating Badge - Top Left (Heart) */}
+              <div className="absolute top-0 left-0 z-10">
+                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-xl border border-gray-100">
+                  <Heart className="w-7 h-7 text-rose-500" />
+                </div>
+              </div>
+
+              {/* Floating Badge - Top Right (Person-Centered) */}
+              <div className="absolute top-0 right-0 z-10 bg-white rounded-xl shadow-xl px-4 py-3 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-gradient-to-br from-rose-400 to-rose-500 rounded-lg flex items-center justify-center">
+                    <Star className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-blue-800 font-semibold text-sm">Personalized</span>
+                </div>
+              </div>
+
+              {/* Floating Badge - Bottom Right (Capacity) */}
+              <div className="absolute -bottom-2 right-0 z-10 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 bg-gradient-to-br from-teal-400 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
                     <Users className="w-7 h-7 text-white" />
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-blue-800">3-4</div>
-                    <div className="text-gray-500 text-sm">Resident Capacity</div>
+                    <div className="text-gray-500 text-sm font-medium">Resident Capacity</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Content */}
+            {/* Content Area - Enhanced */}
             <div className="order-1 lg:order-2">
-              <Badge className="mb-4 bg-blue-100 text-blue-800 border-0 px-4 py-2">
+              {/* Accent Line */}
+              <div className="w-16 h-1 bg-gradient-to-r from-rose-400 to-rose-500 rounded-full mb-6" />
+
+              <Badge className="mb-4 bg-rose-100 text-rose-700 border-0 px-4 py-2">
                 <Heart className="w-4 h-4 mr-2" />
                 Our Approach
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-6 font-[family-name:var(--font-heading)]">
                 Person-Centered Care
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                At Brightway Home Care, we believe that every resident is unique. Our person-centered approach means we take the time to understand each individual&apos;s preferences, routines, and goals.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+
+              {/* Highlighted First Paragraph */}
+              <div className="relative mb-6">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-teal-400 to-teal-500 rounded-full" />
+                <p className="pl-5 text-lg text-gray-700 leading-relaxed font-medium">
+                  At Brightway Home Care, we believe that every resident is unique. Our person-centered approach means we take the time to understand each individual&apos;s preferences, routines, and goals.
+                </p>
+              </div>
+
+              <p className="text-gray-600 leading-relaxed mb-6">
                 We work closely with residents and their families to create personalized care plans that evolve with changing needs, always prioritizing dignity, independence, and quality of life.
               </p>
 
-              <div className="space-y-4">
+              {/* Quote Callout */}
+              <div className="bg-gradient-to-r from-rose-50 to-rose-100/50 rounded-2xl p-5 border-l-4 border-rose-400 mb-8">
+                <p className="text-rose-800 font-medium italic">
+                  "Every person deserves care that respects their individuality."
+                </p>
+              </div>
+
+              {/* Checklist - Alternating Teal/Rose */}
+              <div className="space-y-3">
                 {[
-                  'Individualized care plans',
-                  'Regular care plan reviews',
-                  'Open communication with families',
-                  'Respect for personal preferences',
+                  { text: 'Individualized care plans', color: 'teal' },
+                  { text: 'Regular care plan reviews', color: 'rose' },
+                  { text: 'Open communication with families', color: 'teal' },
+                  { text: 'Respect for personal preferences', color: 'rose' },
                 ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-4 bg-gradient-to-r from-teal-50 to-blue-50 rounded-xl p-4 border border-teal-100">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center flex-shrink-0">
+                  <div
+                    key={index}
+                    className={`group flex items-center gap-4 rounded-xl p-4 border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                      item.color === 'teal'
+                        ? 'bg-teal-50 border-teal-100 hover:border-teal-300'
+                        : 'bg-rose-50 border-rose-100 hover:border-rose-300'
+                    }`}
+                  >
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform ${
+                      item.color === 'teal'
+                        ? 'bg-gradient-to-br from-teal-400 to-teal-500'
+                        : 'bg-gradient-to-br from-rose-400 to-rose-500'
+                    }`}>
                       <CheckCircle2 className="w-4 h-4 text-white" />
                     </div>
-                    <span className="font-medium text-gray-700">{item}</span>
+                    <span className={`font-medium ${
+                      item.color === 'teal' ? 'text-teal-700' : 'text-rose-700'
+                    }`}>
+                      {item.text}
+                    </span>
                   </div>
                 ))}
               </div>

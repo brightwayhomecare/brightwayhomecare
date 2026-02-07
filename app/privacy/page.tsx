@@ -84,7 +84,7 @@ export default function PrivacyPage() {
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 right-[10%] w-64 h-64 bg-teal-400/10 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-20 left-[5%] w-80 h-80 bg-emerald-300/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+          <div className="absolute bottom-20 left-[5%] w-80 h-80 bg-blue-300/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
           <div className="absolute top-1/3 left-1/4 w-2 h-2 bg-white/30 rounded-full animate-float" />
           <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-teal-300/40 rounded-full animate-float" style={{ animationDelay: '1s' }} />
         </div>
@@ -258,23 +258,23 @@ export default function PrivacyPage() {
 
               {/* Section 3 */}
               <Card id="sharing" className="border-0 shadow-lg overflow-hidden scroll-mt-24">
-                <div className="h-1.5 bg-gradient-to-r from-violet-400 to-violet-500" />
+                <div className="h-1.5 bg-gradient-to-r from-rose-400 to-rose-500" />
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-400 to-violet-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-400 to-rose-500 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <Share2 className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <span className="text-violet-500 text-sm font-semibold">Section 3</span>
+                      <span className="text-rose-500 text-sm font-semibold">Section 3</span>
                       <h2 className="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)]">
                         Information Sharing
                       </h2>
                     </div>
                   </div>
-                  <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-6 border border-violet-100">
+                  <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-6 border border-rose-100">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-violet-100 flex items-center justify-center flex-shrink-0">
-                        <Shield className="w-6 h-6 text-violet-600" />
+                      <div className="w-12 h-12 rounded-full bg-rose-100 flex items-center justify-center flex-shrink-0">
+                        <Shield className="w-6 h-6 text-rose-600" />
                       </div>
                       <div>
                         <h4 className="font-bold text-gray-800 mb-2">We Never Sell Your Data</h4>
@@ -289,14 +289,14 @@ export default function PrivacyPage() {
 
               {/* Section 4 */}
               <Card id="security" className="border-0 shadow-lg overflow-hidden scroll-mt-24">
-                <div className="h-1.5 bg-gradient-to-r from-emerald-400 to-emerald-500" />
+                <div className="h-1.5 bg-gradient-to-r from-blue-600 to-blue-800" />
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <Lock className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <span className="text-emerald-500 text-sm font-semibold">Section 4</span>
+                      <span className="text-blue-700 text-sm font-semibold">Section 4</span>
                       <h2 className="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)]">
                         Data Security
                       </h2>
@@ -311,8 +311,8 @@ export default function PrivacyPage() {
                       { icon: Shield, title: 'Protection', desc: 'Secure data storage' },
                       { icon: Fingerprint, title: 'Access Control', desc: 'Limited data access' },
                     ].map((item, i) => (
-                      <div key={i} className="text-center p-4 bg-emerald-50 rounded-xl">
-                        <div className="w-10 h-10 mx-auto mb-3 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-500 flex items-center justify-center">
+                      <div key={i} className="text-center p-4 bg-blue-50 rounded-xl">
+                        <div className="w-10 h-10 mx-auto mb-3 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
                           <item.icon className="w-5 h-5 text-white" />
                         </div>
                         <h4 className="font-bold text-gray-800 text-sm mb-1">{item.title}</h4>
@@ -325,14 +325,14 @@ export default function PrivacyPage() {
 
               {/* Section 5 */}
               <Card id="rights" className="border-0 shadow-lg overflow-hidden scroll-mt-24">
-                <div className="h-1.5 bg-gradient-to-r from-amber-400 to-amber-500" />
+                <div className="h-1.5 bg-gradient-to-r from-rose-400 to-rose-500" />
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-400 to-rose-500 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <UserCheck className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <span className="text-amber-500 text-sm font-semibold">Section 5</span>
+                      <span className="text-rose-500 text-sm font-semibold">Section 5</span>
                       <h2 className="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)]">
                         Your Rights
                       </h2>
@@ -348,8 +348,8 @@ export default function PrivacyPage() {
                       { title: 'Deletion', desc: 'Request deletion of your information' },
                       { title: 'Opt-out', desc: 'Unsubscribe from marketing communications' },
                     ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-3 p-4 bg-amber-50 rounded-xl border border-amber-100">
-                        <ChevronRight className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                      <div key={i} className="flex items-start gap-3 p-4 bg-rose-50 rounded-xl border border-rose-100">
+                        <ChevronRight className="w-5 h-5 text-rose-500 mt-0.5 flex-shrink-0" />
                         <div>
                           <h4 className="font-bold text-gray-800 text-sm">{item.title}</h4>
                           <p className="text-gray-600 text-sm">{item.desc}</p>

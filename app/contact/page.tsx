@@ -291,11 +291,18 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Map Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-max">
+      <section className="section-padding bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/40 relative overflow-hidden">
+        {/* Decorative blur elements */}
+        <div className="absolute top-20 left-10 w-80 h-80 bg-teal-300/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-300/15 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-200/10 rounded-full blur-3xl" />
+
+        <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Form */}
             <div>
+              {/* Accent line above badge */}
+              <div className="w-16 h-1 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full mb-4" />
               <Badge className="mb-4 bg-blue-100 text-blue-800 border-0 px-4 py-2">
                 <Send className="w-4 h-4 mr-2" />
                 Send a Message
@@ -486,6 +493,8 @@ export default function ContactPage() {
             {/* Map & Additional Info */}
             <div className="space-y-8">
               <div>
+                {/* Accent line above badge */}
+                <div className="w-16 h-1 bg-gradient-to-r from-rose-400 to-teal-400 rounded-full mb-4" />
                 <Badge className="mb-4 bg-teal-100 text-teal-700 border-0 px-4 py-2">
                   <MapPin className="w-4 h-4 mr-2" />
                   Visit Us
@@ -499,8 +508,12 @@ export default function ContactPage() {
               </div>
 
               {/* Map */}
-              <div className="relative">
-                <div className="aspect-video bg-gradient-to-br from-blue-100 to-teal-50 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative pt-6 pb-8 pl-6 pr-6">
+                {/* Decorative ring behind map */}
+                <div className="absolute top-0 right-0 w-32 h-32 border-4 border-teal-200/50 rounded-full -translate-y-4 translate-x-4" />
+                <div className="absolute bottom-4 left-0 w-24 h-24 border-4 border-rose-200/40 rounded-full" />
+
+                <div className="relative aspect-video bg-gradient-to-br from-blue-100 to-teal-50 rounded-3xl overflow-hidden shadow-2xl ring-1 ring-gray-200/50">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2909.5!2d-89.3419!3d43.1283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8806533b1e8f2b47%3A0x1234567890abcdef!2s3610%20Spenser%20Ln%2C%20Madison%2C%20WI%2053704!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
                     width="100%"
@@ -514,8 +527,8 @@ export default function ContactPage() {
                   ></iframe>
                 </div>
 
-                {/* Floating Badge */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100">
+                {/* Floating Badge - Bottom Left */}
+                <div className="absolute bottom-0 left-0 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
                       <MapPin className="w-6 h-6 text-white" />
@@ -523,6 +536,19 @@ export default function ContactPage() {
                     <div>
                       <div className="font-bold text-blue-800">Madison, WI</div>
                       <div className="text-gray-500 text-sm">53704</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Badge - Top Right */}
+                <div className="absolute top-0 right-0 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 bg-gradient-to-br from-rose-400 to-rose-500 rounded-xl flex items-center justify-center shadow-lg">
+                      <Heart className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-blue-800 text-sm">Welcome Visits</div>
+                      <div className="text-gray-500 text-xs">Schedule Today</div>
                     </div>
                   </div>
                 </div>
@@ -587,9 +613,20 @@ export default function ContactPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
+      <section className="section-padding bg-gradient-to-br from-white via-blue-50/30 to-teal-50/40 relative overflow-hidden">
+        {/* Decorative blur elements */}
+        <div className="absolute top-10 left-10 w-72 h-72 bg-teal-300/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-300/15 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-rose-200/15 rounded-full blur-3xl" />
+
+        {/* Decorative rings */}
+        <div className="absolute top-20 right-20 w-32 h-32 border-4 border-teal-200/30 rounded-full" />
+        <div className="absolute bottom-32 left-16 w-24 h-24 border-4 border-rose-200/30 rounded-full" />
+
+        <div className="container-max relative z-10">
           <div className="text-center mb-16">
+            {/* Accent line */}
+            <div className="w-16 h-1 bg-gradient-to-r from-blue-500 via-teal-400 to-rose-400 rounded-full mx-auto mb-4" />
             <Badge className="mb-4 bg-blue-100 text-blue-800 border-0 px-4 py-2">
               <Sparkles className="w-4 h-4 mr-2" />
               Why Families Choose Us
@@ -604,14 +641,23 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+              <Card
+                key={index}
+                className={`group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:-translate-y-2 ${
+                  index === 0 ? 'hover:shadow-blue-200/50' :
+                  index === 1 ? 'hover:shadow-teal-200/50' :
+                  'hover:shadow-rose-200/50'
+                }`}
+              >
                 <CardContent className="p-0">
-                  <div className={`bg-gradient-to-r ${item.color} p-6`}>
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                  <div className={`bg-gradient-to-r ${item.color} p-6 relative overflow-hidden`}>
+                    {/* Decorative circle in header */}
+                    <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full" />
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 relative z-10">
                       <item.icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  <div className="p-6 text-center">
+                  <div className="p-6 text-center bg-white">
                     <h3 className="text-xl font-bold text-blue-800 mb-2 font-[family-name:var(--font-heading)]">
                       {item.title}
                     </h3>
@@ -620,6 +666,14 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Trust indicator */}
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
+              <Heart className="w-5 h-5 text-rose-500" />
+              <span className="text-gray-700 font-medium">Trusted by families in Madison since 2024</span>
+            </div>
           </div>
         </div>
       </section>

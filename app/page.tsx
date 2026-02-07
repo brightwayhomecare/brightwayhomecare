@@ -49,91 +49,80 @@ const homeGallery = [
   },
 ]
 
-// Services with unique color themes for visual distinction
+// Services - Brand-compliant teal accent with subtle differentiation
 const services = [
   {
     icon: Users,
     title: 'ADL Support',
     description: 'Compassionate assistance with daily living activities including bathing, dressing, and personal care',
-    gradient: 'from-teal-400 to-teal-600',
-    bgLight: 'bg-teal-50',
-    borderColor: 'border-teal-200 hover:border-teal-400',
-    textColor: 'text-teal-600',
     number: '01',
   },
   {
     icon: Utensils,
     title: 'Meals & Nutrition',
     description: 'Nutritious meal preparation tailored to dietary needs and personal preferences',
-    gradient: 'from-blue-400 to-blue-600',
-    bgLight: 'bg-blue-50',
-    borderColor: 'border-blue-200 hover:border-blue-400',
-    textColor: 'text-blue-600',
     number: '02',
   },
   {
     icon: Shield,
     title: 'Safety Supervision',
     description: '24/7 monitoring and support in a secure, comfortable home environment',
-    gradient: 'from-violet-400 to-violet-600',
-    bgLight: 'bg-violet-50',
-    borderColor: 'border-violet-200 hover:border-violet-400',
-    textColor: 'text-violet-600',
     number: '03',
   },
   {
     icon: Activity,
     title: 'Medication Support',
     description: 'Medication reminders and support to ensure proper health management',
-    gradient: 'from-rose-400 to-rose-600',
-    bgLight: 'bg-rose-50',
-    borderColor: 'border-rose-200 hover:border-rose-400',
-    textColor: 'text-rose-600',
     number: '04',
   },
 ]
 
-// Who We Serve - Unique warm colors for each group
+// Who We Serve - Rose warm accent for care-focused section
 const whoWeServe = [
   {
     icon: Star,
     title: 'Advanced Age',
     description: 'Adults requiring support with daily living activities in their later years',
-    gradient: 'from-amber-400 to-orange-500',
-    bgLight: 'bg-amber-50',
-    iconBg: 'from-amber-100 to-orange-100',
-    borderColor: 'border-amber-200 hover:border-amber-400',
-    textColor: 'text-amber-600',
-    accentColor: 'bg-amber-500',
   },
   {
     icon: Heart,
     title: 'Physical Disabilities',
     description: 'Adults with mobility challenges or physical limitations needing assistance',
-    gradient: 'from-rose-400 to-pink-500',
-    bgLight: 'bg-rose-50',
-    iconBg: 'from-rose-100 to-pink-100',
-    borderColor: 'border-rose-200 hover:border-rose-400',
-    textColor: 'text-rose-600',
-    accentColor: 'bg-rose-500',
   },
   {
     icon: Sparkles,
     title: 'Developmental Disabilities',
     description: 'Adults with intellectual or developmental disabilities requiring supportive care',
-    gradient: 'from-violet-400 to-purple-500',
-    bgLight: 'bg-violet-50',
-    iconBg: 'from-violet-100 to-purple-100',
-    borderColor: 'border-violet-200 hover:border-violet-400',
-    textColor: 'text-violet-600',
-    accentColor: 'bg-violet-500',
   },
 ]
 
+// Why Families Trust Us - Brand-compliant with teal accent
 const whyChoose = [
-  { icon: Home, title: 'Clean & Peaceful', description: 'A well-maintained, quiet environment designed for comfort' },
-  { icon: Heart, title: 'Compassionate Team', description: 'Reliable, caring staff dedicated to personalized attention' },
-  { icon: Star, title: 'Person-Centered', description: 'Individualized support that respects dignity and independence' },
+  {
+    icon: Home,
+    title: 'Clean & Peaceful',
+    description: 'A well-maintained, quiet environment designed for comfort and relaxation',
+  },
+  {
+    icon: Heart,
+    title: 'Compassionate Team',
+    description: 'Reliable, caring staff dedicated to personalized attention and warmth',
+  },
+  {
+    icon: Star,
+    title: 'Person-Centered',
+    description: 'Individualized support that respects dignity, choice, and independence',
+  },
+]
+
+// Benefits - Teal accent for professional trust, Rose for care elements
+const trustBenefits = [
+  { icon: Home, text: 'Clean and peaceful environment' },
+  { icon: Heart, text: 'Reliable, compassionate caregivers' },
+  { icon: Users, text: 'Person-centered care approach' },
+  { icon: Shield, text: 'Small home setting (3-4 beds)' },
+  { icon: Clock, text: '24/7 supervision and support' },
+  { icon: Utensils, text: 'Nutritious home-cooked meals' },
 ]
 
 
@@ -254,19 +243,19 @@ export default function HomePage() {
       </section>
 
 
-      {/* Services Section - Premium Hybrid Design */}
-      <section className="section-padding bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden">
-        {/* Background Decorations */}
+      {/* Services Section - Brand-Compliant Premium Design */}
+      <section className="section-padding bg-gradient-to-b from-white via-teal-50/30 to-white relative overflow-hidden">
+        {/* Background Decorations - Teal theme */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-teal-100/30 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-teal-100/40 rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
         </div>
 
         <div className="container-max relative">
           {/* Section Header */}
           <div className="section-header">
-            <Badge className="mb-4 bg-gradient-to-r from-blue-100 to-teal-100 text-blue-800 border-0 px-4 py-1.5">
-              <Sparkles className="w-3.5 h-3.5 mr-1.5" />
+            <Badge className="mb-4 bg-teal-100 text-blue-800 border-0 px-4 py-1.5">
+              <Sparkles className="w-3.5 h-3.5 mr-1.5 text-teal-600" />
               Our Services
             </Badge>
             <h2 className="section-title">Comprehensive Care Services</h2>
@@ -275,27 +264,27 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Services Grid - Premium Cards */}
+          {/* Services Grid - Brand-Compliant Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`group relative bg-white rounded-2xl border-2 ${service.borderColor} p-6 lg:p-7 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden`}
+                className="group relative bg-white rounded-2xl border-2 border-gray-100 hover:border-teal-300 p-6 lg:p-7 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden"
               >
                 {/* Background Number - Design Element */}
-                <span className="absolute -right-4 -top-6 text-[120px] font-black text-gray-100/60 leading-none select-none pointer-events-none group-hover:text-gray-100 transition-colors duration-500">
+                <span className="absolute -right-4 -top-6 text-[120px] font-black text-gray-100/60 leading-none select-none pointer-events-none group-hover:text-teal-100/80 transition-colors duration-500">
                   {service.number}
                 </span>
 
                 {/* Content */}
                 <div className="relative z-10">
-                  {/* Gradient Icon Circle */}
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                  {/* Teal Gradient Icon Circle */}
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-[family-name:var(--font-heading)] group-hover:text-blue-800 transition-colors">
+                  {/* Title - Blue 800 */}
+                  <h3 className="text-xl font-bold text-blue-800 mb-3 font-[family-name:var(--font-heading)]">
                     {service.title}
                   </h3>
 
@@ -304,12 +293,12 @@ export default function HomePage() {
                     {service.description}
                   </p>
 
-                  {/* Bottom Accent Line */}
-                  <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl`} />
+                  {/* Bottom Accent Line - Teal */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-400 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl" />
                 </div>
 
-                {/* Hover Glow Effect */}
-                <div className={`absolute inset-0 ${service.bgLight} opacity-0 group-hover:opacity-50 transition-opacity duration-500 rounded-2xl`} />
+                {/* Hover Glow Effect - Teal */}
+                <div className="absolute inset-0 bg-teal-50 opacity-0 group-hover:opacity-50 transition-opacity duration-500 rounded-2xl" />
               </div>
             ))}
           </div>
@@ -326,19 +315,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Who We Serve - Warm & Welcoming Design */}
-      <section className="section-padding bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
-        {/* Background Decorations */}
+      {/* Who We Serve - Rose Warm Accent for Care-Focused Section */}
+      <section className="section-padding bg-gradient-to-b from-gray-50 via-rose-50/20 to-gray-50 relative overflow-hidden">
+        {/* Background Decorations - Rose/Teal theme */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-amber-100/40 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-rose-100/40 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 right-10 w-48 h-48 bg-violet-100/40 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-rose-100/50 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-teal-100/40 rounded-full blur-3xl" />
         </div>
 
         <div className="container-max relative">
           {/* Section Header */}
           <div className="section-header">
-            <Badge className="mb-4 bg-gradient-to-r from-amber-100 via-rose-100 to-violet-100 text-gray-700 border-0 px-4 py-1.5">
+            <Badge className="mb-4 bg-rose-100 text-blue-800 border-0 px-4 py-1.5">
               <Heart className="w-3.5 h-3.5 mr-1.5 text-rose-500" />
               Who We Serve
             </Badge>
@@ -348,61 +336,61 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Cards Grid */}
+          {/* Cards Grid - Rose accent */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {whoWeServe.map((item, index) => (
               <div
                 key={index}
-                className={`group relative bg-white rounded-3xl border-2 ${item.borderColor} p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden`}
+                className="group relative bg-white rounded-3xl border-2 border-gray-100 hover:border-rose-300 p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden"
               >
-                {/* Top Accent Bar */}
-                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${item.gradient}`} />
+                {/* Top Accent Bar - Rose */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-rose-400 to-rose-500" />
 
-                {/* Floating Icon Circle */}
+                {/* Floating Icon Circle - Rose gradient */}
                 <div className="relative mb-6">
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-rose-400 to-rose-500 flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                     <item.icon className="w-10 h-10 text-white" />
                   </div>
                   {/* Decorative Ring */}
-                  <div className={`absolute -inset-2 rounded-3xl bg-gradient-to-br ${item.iconBg} -z-10 opacity-60`} />
+                  <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-rose-100 to-rose-200 -z-10 opacity-60" />
                 </div>
 
                 {/* Content */}
                 <div className="relative">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-[family-name:var(--font-heading)] group-hover:text-blue-800 transition-colors">
+                  <h3 className="text-xl font-bold text-blue-800 mb-3 font-[family-name:var(--font-heading)]">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-5">
                     {item.description}
                   </p>
 
-                  {/* Learn More Link */}
+                  {/* Learn More Link - Rose accent */}
                   <Link
                     href="/services"
-                    className={`inline-flex items-center gap-2 ${item.textColor} font-semibold text-sm group/link hover:gap-3 transition-all`}
+                    className="inline-flex items-center gap-2 text-rose-600 font-semibold text-sm group/link hover:gap-3 transition-all"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
                   </Link>
                 </div>
 
-                {/* Hover Background Glow */}
-                <div className={`absolute inset-0 ${item.bgLight} opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-3xl -z-10`} />
+                {/* Hover Background Glow - Rose */}
+                <div className="absolute inset-0 bg-rose-50 opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-3xl -z-10" />
               </div>
             ))}
           </div>
 
-          {/* Bottom Trust Statement */}
+          {/* Bottom Trust Statement - Brand colors */}
           <div className="mt-14 text-center">
             <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
               <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center">
                   <Star className="w-4 h-4 text-white" />
                 </div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-rose-500 flex items-center justify-center">
                   <Heart className="w-4 h-4 text-white" />
                 </div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-700 to-blue-800 flex items-center justify-center">
                   <Sparkles className="w-4 h-4 text-white" />
                 </div>
               </div>
@@ -412,49 +400,96 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Brightway */}
-      <section className="section-padding bg-white bg-decorative-circles">
+      {/* Why Choose Brightway - Teal Accent Trust Section */}
+      <section className="section-padding bg-gradient-to-b from-white via-teal-50/20 to-white relative overflow-hidden">
+        {/* Background Decorations - Teal/Blue theme */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-teal-100/50 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl" />
+        </div>
+
         <div className="container-max relative">
+          {/* Section Header */}
           <div className="section-header">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 border-0">Why Choose Us</Badge>
+            <Badge className="mb-4 bg-blue-100 text-blue-800 border-0 px-4 py-1.5">
+              <Shield className="w-3.5 h-3.5 mr-1.5 text-blue-600" />
+              Why Choose Us
+            </Badge>
             <h2 className="section-title">Why Families Trust Brightway</h2>
             <p className="section-subtitle">
               Our commitment to quality care and comfortable living sets us apart
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* Trust Pillars - Teal Accent Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {whyChoose.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-teal-400 to-teal-300 flex items-center justify-center shadow-xl">
-                  <item.icon className="w-10 h-10 text-blue-800" />
+              <div
+                key={index}
+                className="group relative bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-gray-100 hover:border-teal-300 p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden"
+              >
+                {/* Top Accent Bar - Teal */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-400 to-teal-500" />
+
+                {/* Floating Icon - Teal gradient */}
+                <div className="relative mb-6">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                    <item.icon className="w-10 h-10 text-white" />
+                  </div>
+                  {/* Decorative Ring */}
+                  <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-teal-100 to-teal-200 -z-10 opacity-60" />
                 </div>
-                <h3 className="text-xl font-bold text-blue-800 mb-3 font-[family-name:var(--font-heading)]">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {item.description}
-                </p>
+
+                {/* Content */}
+                <div className="relative">
+                  <h3 className="text-xl font-bold text-blue-800 mb-3 font-[family-name:var(--font-heading)]">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+
+                {/* Hover Background Glow - Teal */}
+                <div className="absolute inset-0 bg-teal-50 opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-3xl -z-10" />
               </div>
             ))}
           </div>
 
-          {/* Additional Benefits */}
-          <div className="mt-16 bg-gradient-to-r from-blue-50 to-teal-50 rounded-3xl p-8 md:p-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                'Clean and peaceful environment',
-                'Reliable, compassionate caregivers',
-                'Person-centered care approach',
-                'Small home setting (3-4 beds)',
-                '24/7 supervision and support',
-                'Nutritious home-cooked meals'
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-teal-500 flex-shrink-0" />
-                  <span className="text-gray-700 font-medium">{item}</span>
+          {/* Benefits Feature Grid - Alternating Teal/Rose */}
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <h3 className="text-xl font-bold text-blue-800 font-[family-name:var(--font-heading)]">
+                What Sets Us Apart
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              {trustBenefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className={`group flex items-center gap-4 ${index % 2 === 0 ? 'bg-teal-50' : 'bg-rose-50'} rounded-2xl p-4 border border-transparent hover:border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
+                >
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <benefit.icon className={`w-6 h-6 ${index % 2 === 0 ? 'text-teal-500' : 'text-rose-500'}`} />
+                  </div>
+                  <span className="text-gray-700 font-medium text-sm lg:text-base">
+                    {benefit.text}
+                  </span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Trust Seal - Brand Blue */}
+          <div className="mt-14 text-center">
+            <div className="inline-flex items-center gap-4 bg-white/90 backdrop-blur-sm rounded-full px-8 py-4 shadow-xl border border-gray-100">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-700 to-blue-800 flex items-center justify-center shadow-lg">
+                <Shield className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-left">
+                <p className="text-blue-800 font-bold text-lg">Family Trusted Care</p>
+                <p className="text-gray-500 text-sm">Licensed Adult Family Home in Madison, WI</p>
+              </div>
             </div>
           </div>
         </div>
