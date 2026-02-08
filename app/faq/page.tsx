@@ -145,7 +145,7 @@ export default function FAQPage() {
           <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-teal-300/40 rounded-full animate-float" style={{ animationDelay: '1s' }} />
         </div>
 
-        <div className="relative container-max py-20 text-center">
+        <div className="relative z-10 container-max py-20 text-center">
           <Badge className="mb-6 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-5 py-2.5 text-sm">
             <HelpCircle className="w-4 h-4 mr-2 text-teal-300" />
             Got Questions? We Have Answers
@@ -163,14 +163,23 @@ export default function FAQPage() {
           {/* Search Bar */}
           <div className="max-w-xl mx-auto relative">
             <div className="relative">
-              <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-white/50" />
               <input
                 type="text"
                 placeholder="Search questions..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-14 pl-14 pr-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all"
+                className="w-full h-14 pl-14 pr-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all"
               />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all"
+                  aria-label="Clear search"
+                >
+                  <span className="text-white text-sm font-bold">×</span>
+                </button>
+              )}
             </div>
           </div>
         </div>
