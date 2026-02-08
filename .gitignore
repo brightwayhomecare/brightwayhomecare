@@ -56,3 +56,6 @@ public/workbox-*.js.map
 # Misc
 *.pem
 *.log
+
+# Claude Code
+CLAUDE.md
