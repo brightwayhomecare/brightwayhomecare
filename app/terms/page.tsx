@@ -199,14 +199,14 @@ export default function TermsPage() {
 
               {/* Section 3 */}
               <Card id="use" className="border-0 shadow-lg overflow-hidden scroll-mt-24">
-                <div className="h-1.5 bg-gradient-to-r from-violet-400 to-violet-500" />
+                <div className="h-1.5 bg-gradient-to-r from-rose-400 to-rose-500" />
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-400 to-violet-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-400 to-rose-500 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <Globe className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <span className="text-violet-500 text-sm font-semibold">Section 3</span>
+                      <span className="text-rose-500 text-sm font-semibold">Section 3</span>
                       <h2 className="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)]">
                         Use of Website
                       </h2>
@@ -223,7 +223,7 @@ export default function TermsPage() {
                       'Transmit harmful or malicious content'
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-3 text-gray-600">
-                        <ChevronRight className="w-5 h-5 text-violet-400 flex-shrink-0" />
+                        <ChevronRight className="w-5 h-5 text-rose-400 flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -233,14 +233,14 @@ export default function TermsPage() {
 
               {/* Section 4 */}
               <Card id="intellectual" className="border-0 shadow-lg overflow-hidden scroll-mt-24">
-                <div className="h-1.5 bg-gradient-to-r from-emerald-400 to-emerald-500" />
+                <div className="h-1.5 bg-gradient-to-r from-blue-600 to-blue-800" />
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <ShieldCheck className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <span className="text-emerald-500 text-sm font-semibold">Section 4</span>
+                      <span className="text-blue-700 text-sm font-semibold">Section 4</span>
                       <h2 className="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)]">
                         Intellectual Property
                       </h2>
@@ -254,14 +254,14 @@ export default function TermsPage() {
 
               {/* Section 5 */}
               <Card id="disclaimer" className="border-0 shadow-lg overflow-hidden scroll-mt-24">
-                <div className="h-1.5 bg-gradient-to-r from-amber-400 to-amber-500" />
+                <div className="h-1.5 bg-gradient-to-r from-teal-400 to-teal-500" />
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <AlertTriangle className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <span className="text-amber-500 text-sm font-semibold">Section 5</span>
+                      <span className="text-teal-500 text-sm font-semibold">Section 5</span>
                       <h2 className="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)]">
                         Disclaimer of Warranties
                       </h2>
@@ -296,14 +296,14 @@ export default function TermsPage() {
 
               {/* Section 7 */}
               <Card id="links" className="border-0 shadow-lg overflow-hidden scroll-mt-24">
-                <div className="h-1.5 bg-gradient-to-r from-cyan-400 to-cyan-500" />
+                <div className="h-1.5 bg-gradient-to-r from-blue-400 to-blue-500" />
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-cyan-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-blue-500 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <Link2 className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <span className="text-cyan-500 text-sm font-semibold">Section 7</span>
+                      <span className="text-blue-500 text-sm font-semibold">Section 7</span>
                       <h2 className="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)]">
                         Third-Party Links
                       </h2>
@@ -317,14 +317,14 @@ export default function TermsPage() {
 
               {/* Section 8 */}
               <Card id="changes" className="border-0 shadow-lg overflow-hidden scroll-mt-24">
-                <div className="h-1.5 bg-gradient-to-r from-indigo-400 to-indigo-500" />
+                <div className="h-1.5 bg-gradient-to-r from-teal-400 to-teal-500" />
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <RefreshCw className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <span className="text-indigo-500 text-sm font-semibold">Section 8</span>
+                      <span className="text-teal-500 text-sm font-semibold">Section 8</span>
                       <h2 className="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)]">
                         Changes to Terms
                       </h2>
@@ -338,14 +338,14 @@ export default function TermsPage() {
 
               {/* Section 9 */}
               <Card id="governing" className="border-0 shadow-lg overflow-hidden scroll-mt-24">
-                <div className="h-1.5 bg-gradient-to-r from-purple-400 to-purple-500" />
+                <div className="h-1.5 bg-gradient-to-r from-rose-400 to-rose-500" />
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-purple-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-400 to-rose-500 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <Gavel className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <span className="text-purple-500 text-sm font-semibold">Section 9</span>
+                      <span className="text-rose-500 text-sm font-semibold">Section 9</span>
                       <h2 className="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)]">
                         Governing Law
                       </h2>
