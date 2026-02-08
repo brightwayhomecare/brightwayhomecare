@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brightway Home Care LLC - Licensed Adult Family Home in Madison, WI providing compassionate 24/7 care">
+    <title>Brightway Home Care LLC - Digital Brochure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================
+           CSS RESET & VARIABLES
+           ========================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Brand Colors */
+            --blue-900: #1e3a5f;
+            --blue-800: #1e3a8a;
+            --blue-700: #1d4ed8;
+            --blue-600: #2563eb;
+            --blue-100: #dbeafe;
+            --blue-50: #eff6ff;
+
+            --teal-500: #14b8a6;
+            --teal-400: #2dd4bf;
+            --teal-300: #5eead4;
+            --teal-100: #ccfbf1;
+            --teal-50: #f0fdfa;
+
+            --rose-500: #f43f5e;
+            --rose-400: #fb7185;
+            --rose-100: #ffe4e6;
+            --rose-50: #fff1f2;
+
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+
+            /* Typography */
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* Spacing */
+            --section-padding: clamp(3rem, 8vw, 6rem);
+            --container-max: 1200px;
+
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        /* ==========================================
+           BASE STYLES
+           ========================================== */
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--gray-700);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--blue-800);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ==========================================
+           UTILITIES
+           ========================================== */
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        .section {
+            padding: var(--section-padding) 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* ==========================================
+           ANIMATIONS
+           ========================================== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slide-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        .fade-in-up {
+            animation: fade-in-up 0.8s ease forwards;
+        }
+
+        /* ==========================================
+           COMPONENTS: BADGES
+           ========================================== */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            background: var(--teal-100);
+            color: var(--blue-800);
+        }
+
+        .badge--hero {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+        }
+
+        .badge svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* ==========================================
+           COMPONENTS: BUTTONS
+           ========================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-decoration: none;
+        }
+
+        .btn svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .btn--primary {
+            background: linear-gradient(135deg, var(--teal-400), var(--teal-500));
+            color: var(--blue-900);
+            box-shadow: 0 10px 30px rgba(45, 212, 191, 0.3);
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(45, 212, 191, 0.4);
+        }
+
+        .btn--secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .btn--secondary:hover {
+            background: var(--white);
+            color: var(--blue-800);
+            transform: translateY(-3px);
+        }
+
+        .btn--dark {
+            background: linear-gradient(135deg, var(--blue-700), var(--blue-800));
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn--dark:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.4);
+        }
+
+        .btn--outline {
+            background: transparent;
+            color: var(--blue-800);
+            border: 2px solid var(--blue-800);
+        }
+
+        .btn--outline:hover {
+            background: var(--blue-800);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ==========================================
+           COMPONENTS: SECTION HEADER
+           ========================================== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header .badge {
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--teal-400), var(--blue-600));
+            border-radius: 2px;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--blue-800) 0%, var(--blue-900) 50%, #0f172a 100%);
+            overflow: hidden;
+        }
+
+        .hero__bg-effects {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .hero__bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .hero__bg-circle--1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            right: -100px;
+            background: rgba(45, 212, 191, 0.15);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        .hero__bg-circle--2 {
+            width: 300px;
+            height: 300px;
+            bottom: -50px;
+            left: -50px;
+            background: rgba(30, 58, 138, 0.3);
+            animation: pulse-glow 4s ease-in-out infinite 1s;
+        }
+
+        .hero__bg-circle--3 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(94, 234, 212, 0.1);
+            animation: pulse-glow 4s ease-in-out infinite 2s;
+        }
+
+        .hero__particles {
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero__particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .hero__particle--1 { top: 20%; left: 20%; animation: float 5s ease-in-out infinite; }
+        .hero__particle--2 { top: 30%; right: 25%; animation: float 6s ease-in-out infinite 1s; }
+        .hero__particle--3 { bottom: 30%; left: 15%; animation: float 7s ease-in-out infinite 2s; }
+        .hero__particle--4 { top: 60%; right: 15%; animation: float 5s ease-in-out infinite 0.5s; }
+
+        .hero__content {
+            position: relative;
+            z-index: 10;
+            padding: 2rem 0;
+        }
+
+        .hero__grid {
+            display: grid;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .hero__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+        }
+
+        .hero__text {
+            text-align: center;
+        }
+
+        @media (min-width: 1024px) {
+            .hero__text {
+                text-align: left;
+            }
+        }
+
+        .hero__title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: var(--white);
+            margin: 1.5rem 0;
+            line-height: 1.1;
+        }
+
+        .hero__title span {
+            color: var(--teal-300);
+            text-shadow: 0 0 40px rgba(94, 234, 212, 0.5);
+        }
+
+        .hero__tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--teal-300);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero__tagline span {
+            width: 6px;
+            height: 6px;
+            background: var(--teal-400);
+            border-radius: 50%;
+        }
+
+        .hero__description {
+            color: var(--blue-100);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        @media (min-width: 1024px) {
+            .hero__description {
+                margin-left: 0;
+                margin-right: auto;
+            }
+        }
+
+        .hero__cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (min-width: 480px) {
+            .hero__cta {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero__cta {
+                justify-content: flex-start;
+            }
+        }
+
+        .hero__trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .hero__trust {
+                justify-content: flex-start;
+            }
+        }
+
+        .hero__trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--blue-100);
+            font-size: 0.9rem;
+        }
+
+        .hero__trust-item svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--teal-300);
+        }
+
+        /* Hero Visual */
+        .hero__visual {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .hero__visual {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .hero__card {
+            position: relative;
+            width: 280px;
+            height: 280px;
+        }
+
+        .hero__card-inner {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero__card-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero__card-logo span {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--blue-800);
+        }
+
+        .hero__card-title {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .hero__card-subtitle {
+            color: var(--teal-300);
+            font-size: 0.9rem;
+        }
+
+        .hero__floating-icon {
+            position: absolute;
+            width: 56px;
+            height: 56px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero__floating-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--white);
+        }
+
+        .hero__floating-icon--top {
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--rose-400), var(--rose-500));
+        }
+
+        .hero__floating-icon--right {
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, var(--teal-400), var(--teal-500));
+            animation-delay: 1s;
+        }
+
+        .hero__floating-icon--bottom {
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--blue-600), var(--blue-800));
+            animation-delay: 2s;
+        }
+
+        /* Wave Divider */
+        .hero__wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            line-height: 0;
+        }
+
+        .hero__wave svg {
+            width: 100%;
+            height: auto;
+        }
+
+        /* ==========================================
+           ABOUT SECTION
+           ========================================== */
+        .about {
+            background: var(--white);
+        }
+
+        .about__grid {
+            display: grid;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .about__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+        }
+
+        .about__image-wrapper {
+            position: relative;
+        }
+
+        .about__image-bg {
+            position: absolute;
+            inset: -1rem;
+            background: linear-gradient(135deg, var(--teal-100), var(--blue-100));
+            border-radius: 2rem;
+            z-index: -1;
+        }
+
+        .about__image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--blue-100), var(--teal-50));
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .about__image-placeholder {
+            text-align: center;
+            color: var(--gray-500);
+        }
+
+        .about__image-placeholder svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 0.5rem;
+            opacity: 0.5;
+        }
+
+        .about__floating-badge {
+            position: absolute;
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .about__floating-badge--top {
+            top: -0.5rem;
+            right: -0.5rem;
+        }
+
+        .about__floating-badge--bottom {
+            bottom: -0.5rem;
+            left: -0.5rem;
+        }
+
+        @media (max-width: 767px) {
+            .about__floating-badge--top {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+            .about__floating-badge--bottom {
+                bottom: 0.5rem;
+                left: 0.5rem;
+            }
+        }
+
+        .about__floating-badge-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about__floating-badge-icon--teal {
+            background: linear-gradient(135deg, var(--teal-400), var(--teal-500));
+        }
+
+        .about__floating-badge-icon--rose {
+            background: linear-gradient(135deg, var(--rose-400), var(--rose-500));
+        }
+
+        .about__floating-badge-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--white);
+        }
+
+        .about__floating-badge-text {
+            font-weight: 700;
+            color: var(--blue-800);
+            font-size: 0.9rem;
+        }
+
+        .about__floating-badge-subtext {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        .about__content {
+            text-align: center;
+        }
+
+        @media (min-width: 1024px) {
+            .about__content {
+                text-align: left;
+            }
+        }
+
+        .about__content .accent-line {
+            margin: 0 auto 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .about__content .accent-line {
+                margin: 0 0 1.5rem;
+            }
+        }
+
+        .about__content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about__content p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-600);
+        }
+
+        .about__highlight {
+            background: linear-gradient(135deg, var(--rose-50), var(--rose-100));
+            border-left: 4px solid var(--rose-400);
+            padding: 1.25rem;
+            border-radius: 0 1rem 1rem 0;
+            margin: 1.5rem 0;
+        }
+
+        .about__highlight p {
+            color: var(--rose-800);
+            font-style: italic;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .about__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .about__tags {
+                justify-content: flex-start;
+            }
+        }
+
+        .about__tag {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .about__tag--teal {
+            background: var(--teal-50);
+            color: var(--teal-700);
+            border: 1px solid var(--teal-200);
+        }
+
+        .about__tag--rose {
+            background: var(--rose-50);
+            color: var(--rose-700);
+            border: 1px solid var(--rose-200);
+        }
+
+        .about__tag svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* ==========================================
+           SERVICES SECTION
+           ========================================== */
+        .services {
+            background: linear-gradient(180deg, var(--gray-50), var(--white));
+        }
+
+        .services__grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .services__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-normal);
+            border: 1px solid var(--gray-100);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card__header {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .service-card__header--teal {
+            background: linear-gradient(135deg, var(--teal-400), var(--teal-500));
+        }
+
+        .service-card__header--blue {
+            background: linear-gradient(135deg, var(--blue-600), var(--blue-800));
+        }
+
+        .service-card__header--rose {
+            background: linear-gradient(135deg, var(--rose-400), var(--rose-500));
+        }
+
+        .service-card__icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .service-card__icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--white);
+        }
+
+        .service-card__title {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .service-card__body {
+            padding: 1.5rem;
+        }
+
+        .service-card__description {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card__features {
+            list-style: none;
+        }
+
+        .service-card__feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0;
+            font-size: 0.85rem;
+            color: var(--gray-700);
+        }
+
+        .service-card__feature svg {
+            width: 16px;
+            height: 16px;
+            color: var(--teal-500);
+            flex-shrink: 0;
+        }
+
+        /* ==========================================
+           WHO WE SERVE SECTION
+           ========================================== */
+        .serve {
+            background: linear-gradient(135deg, var(--blue-800), var(--blue-900));
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .serve__bg-effects {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .serve__bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .serve__bg-circle--1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+            background: rgba(45, 212, 191, 0.1);
+        }
+
+        .serve__bg-circle--2 {
+            width: 250px;
+            height: 250px;
+            bottom: -100px;
+            right: -100px;
+            background: rgba(251, 113, 133, 0.1);
+        }
+
+        .serve__content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .serve .section-header h2 {
+            color: var(--white);
+        }
+
+        .serve .section-header p {
+            color: var(--blue-200);
+        }
+
+        .serve__grid {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .serve__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .serve-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+
+        .serve-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .serve-card__icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .serve-card__icon--teal {
+            background: linear-gradient(135deg, var(--teal-400), var(--teal-500));
+        }
+
+        .serve-card__icon--rose {
+            background: linear-gradient(135deg, var(--rose-400), var(--rose-500));
+        }
+
+        .serve-card__icon--blue {
+            background: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+        }
+
+        .serve-card__icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--white);
+        }
+
+        .serve-card__title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .serve-card__description {
+            font-size: 0.9rem;
+            color: var(--blue-200);
+            line-height: 1.6;
+        }
+
+        .serve__bottom {
+            margin-top: 3rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .serve__bottom p {
+            color: var(--blue-200);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================
+           WHY CHOOSE US SECTION
+           ========================================== */
+        .why {
+            background: var(--white);
+        }
+
+        .why__grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .why__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .why__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .why-card {
+            background: var(--gray-50);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            transition: all var(--transition-normal);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--teal-400), var(--blue-600));
+            transform: scaleX(0);
+            transition: transform var(--transition-normal);
+        }
+
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .why-card:hover {
+            border-color: var(--teal-200);
+            box-shadow: 0 15px 40px rgba(45, 212, 191, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .why-card__number {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--gray-100);
+            line-height: 1;
+            font-family: var(--font-heading);
+        }
+
+        .why-card__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-card__icon--teal {
+            background: linear-gradient(135deg, var(--teal-400), var(--teal-500));
+        }
+
+        .why-card__icon--blue {
+            background: linear-gradient(135deg, var(--blue-600), var(--blue-800));
+        }
+
+        .why-card__icon--rose {
+            background: linear-gradient(135deg, var(--rose-400), var(--rose-500));
+        }
+
+        .why-card__icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--white);
+        }
+
+        .why-card__title {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-card__description {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ==========================================
+           CTA / CONTACT SECTION
+           ========================================== */
+        .cta {
+            background: linear-gradient(180deg, var(--gray-50), var(--white));
+            position: relative;
+        }
+
+        .cta__card {
+            background: linear-gradient(135deg, var(--blue-800), var(--blue-900));
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .cta__card {
+                padding: 4rem;
+            }
+        }
+
+        .cta__bg-effects {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .cta__bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .cta__bg-circle--1 {
+            width: 200px;
+            height: 200px;
+            top: -50px;
+            right: -50px;
+            background: rgba(45, 212, 191, 0.2);
+        }
+
+        .cta__bg-circle--2 {
+            width: 150px;
+            height: 150px;
+            bottom: -50px;
+            left: -50px;
+            background: rgba(251, 113, 133, 0.15);
+        }
+
+        .cta__content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(45, 212, 191, 0.2);
+            color: var(--teal-300);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta__badge svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .cta__title {
+            color: var(--white);
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta__title span {
+            color: var(--teal-300);
+        }
+
+        .cta__description {
+            color: var(--blue-200);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta__buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (min-width: 480px) {
+            .cta__buttons {
+                flex-direction: row;
+            }
+        }
+
+        .cta__contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            .cta__contact-info {
+                flex-direction: row;
+                justify-content: center;
+                gap: 2.5rem;
+            }
+        }
+
+        .cta__contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--blue-100);
+            font-size: 0.95rem;
+            justify-content: center;
+        }
+
+        .cta__contact-item svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--teal-300);
+            flex-shrink: 0;
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .footer__logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer__logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--teal-400), var(--teal-500));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer__logo-icon span {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer__logo-text {
+            text-align: left;
+        }
+
+        .footer__logo-name {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+
+        .footer__logo-tagline {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+
+        .footer__links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer__link {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+            transition: color var(--transition-fast);
+        }
+
+        .footer__link:hover {
+            color: var(--teal-400);
+        }
+
+        .footer__copyright {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        /* ==========================================
+           PRINT STYLES
+           ========================================== */
+        @media print {
+            body {
+                font-size: 12pt;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+
+            .hero__visual,
+            .hero__bg-effects,
+            .hero__particles,
+            .hero__wave,
+            .cta__bg-effects,
+            .serve__bg-effects {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                padding: 1.5rem 0;
+            }
+
+            .btn {
+                border: 1px solid currentColor;
+            }
+
+            .service-card,
+            .serve-card,
+            .why-card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero__bg-effects">
+            <div class="hero__bg-circle hero__bg-circle--1"></div>
+            <div class="hero__bg-circle hero__bg-circle--2"></div>
+            <div class="hero__bg-circle hero__bg-circle--3"></div>
+        </div>
+        <div class="hero__particles">
+            <div class="hero__particle hero__particle--1"></div>
+            <div class="hero__particle hero__particle--2"></div>
+            <div class="hero__particle hero__particle--3"></div>
+            <div class="hero__particle hero__particle--4"></div>
+        </div>
+
+        <div class="hero__content container">
+            <div class="hero__grid">
+                <div class="hero__text">
+                    <span class="badge badge--hero">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Licensed Adult Family Home in Madison, WI
+                    </span>
+
+                    <h1 class="hero__title">
+                        A Place to Call <span>Home</span>
+                    </h1>
+
+                    <div class="hero__tagline">
+                        Safe <span></span> Supportive <span></span> 24/7 Care
+                    </div>
+
+                    <p class="hero__description">
+                        Personalized care in a small, peaceful home setting where your loved ones are treated like family.
+                    </p>
+
+                    <div class="hero__cta">
+                        <a href="tel:+18477459930" class="btn btn--primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            Call / WhatsApp
+                        </a>
+                        <a href="mailto:Brightwayhomecarellc@gmail.com" class="btn btn--secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Email Us
+                        </a>
+                    </div>
+
+                    <div class="hero__trust">
+                        <div class="hero__trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            Licensed & Certified
+                        </div>
+                        <div class="hero__trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            24/7 Care
+                        </div>
+                        <div class="hero__trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            Family-Owned
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero__visual">
+                    <div class="hero__card">
+                        <div class="hero__card-inner">
+                            <div class="hero__card-logo">
+                                <span>B</span>
+                            </div>
+                            <div class="hero__card-title">Brightway</div>
+                            <div class="hero__card-subtitle">Home Care LLC</div>
+                        </div>
+                        <div class="hero__floating-icon hero__floating-icon--top">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </div>
+                        <div class="hero__floating-icon hero__floating-icon--right">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="hero__floating-icon hero__floating-icon--bottom">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero__wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H0Z" fill="white"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__image-wrapper">
+                    <div class="about__image-bg"></div>
+                    <div class="about__image">
+                        <div class="about__image-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <p>Welcome to Our Home</p>
+                        </div>
+                    </div>
+                    <div class="about__floating-badge about__floating-badge--top">
+                        <div class="about__floating-badge-icon about__floating-badge-icon--teal">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="about__floating-badge-text">Since 2024</div>
+                            <div class="about__floating-badge-subtext">Madison, WI</div>
+                        </div>
+                    </div>
+                    <div class="about__floating-badge about__floating-badge--bottom">
+                        <div class="about__floating-badge-icon about__floating-badge-icon--rose">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="about__floating-badge-text">3-4 Beds</div>
+                            <div class="about__floating-badge-subtext">Small Home Setting</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about__content">
+                    <div class="accent-line"></div>
+                    <span class="badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        Welcome to Brightway
+                    </span>
+                    <h2>Quality Care in a Home Setting</h2>
+                    <p>
+                        Brightway Home Care LLC is a licensed Adult Family Home located in Madison, Wisconsin. We provide residential care in a small, intimate setting with a capacity of 3-4 beds.
+                    </p>
+                    <p>
+                        Our focus is on creating a comfortable, dignified living environment where residents can thrive with personalized attention and 24/7 supervision.
+                    </p>
+
+                    <div class="about__highlight">
+                        <p>"Quality care happens best in intimate settings where each person receives individual attention."</p>
+                    </div>
+
+                    <div class="about__tags">
+                        <span class="about__tag about__tag--teal">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            Licensed & Certified
+                        </span>
+                        <span class="about__tag about__tag--rose">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            Family-Owned
+                        </span>
+                        <span class="about__tag about__tag--teal">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            Person-Centered
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section">
+        <div class="container">
+            <div class="section-header">
+                <div class="accent-line"></div>
+                <span class="badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    Our Services
+                </span>
+                <h2>Comprehensive Care Services</h2>
+                <p>Tailored support designed to meet individual needs in a warm, home-like environment</p>
+            </div>
+
+            <div class="services__grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-card__header service-card__header--teal">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">ADL Support</h3>
+                    </div>
+                    <div class="service-card__body">
+                        <p class="service-card__description">Compassionate assistance with daily living activities</p>
+                        <ul class="service-card__features">
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Bathing & Showering
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Dressing Assistance
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Personal Grooming
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-card__header service-card__header--blue">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                <line x1="6" y1="1" x2="6" y2="4"></line>
+                                <line x1="10" y1="1" x2="10" y2="4"></line>
+                                <line x1="14" y1="1" x2="14" y2="4"></line>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Meals & Nutrition</h3>
+                    </div>
+                    <div class="service-card__body">
+                        <p class="service-card__description">Nutritious home-cooked meals tailored to needs</p>
+                        <ul class="service-card__features">
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Custom Meal Plans
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Dietary Accommodations
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Hydration Support
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-card__header service-card__header--rose">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Safety Supervision</h3>
+                    </div>
+                    <div class="service-card__body">
+                        <p class="service-card__description">24/7 monitoring in a secure environment</p>
+                        <ul class="service-card__features">
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                24/7 Staff Presence
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Emergency Response
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Fall Prevention
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-card__header service-card__header--teal">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Medication Support</h3>
+                    </div>
+                    <div class="service-card__body">
+                        <p class="service-card__description">Medication reminders and health management</p>
+                        <ul class="service-card__features">
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Scheduled Reminders
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Medication Tracking
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Care Coordination
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-card__header service-card__header--blue">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Mobility & Care</h3>
+                    </div>
+                    <div class="service-card__body">
+                        <p class="service-card__description">Assistance with mobility and personal care</p>
+                        <ul class="service-card__features">
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Transfer Assistance
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Mobility Support
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Physical Comfort
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-card__header service-card__header--rose">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Respite Care</h3>
+                    </div>
+                    <div class="service-card__body">
+                        <p class="service-card__description">Short-term care for caregiver relief</p>
+                        <ul class="service-card__features">
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Short-Term Stays
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Caregiver Relief
+                            </li>
+                            <li class="service-card__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Full Care Services
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO WE SERVE SECTION -->
+    <section class="serve section">
+        <div class="serve__bg-effects">
+            <div class="serve__bg-circle serve__bg-circle--1"></div>
+            <div class="serve__bg-circle serve__bg-circle--2"></div>
+        </div>
+        <div class="serve__content container">
+            <div class="section-header">
+                <div class="accent-line"></div>
+                <span class="badge badge--hero">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    Who We Serve
+                </span>
+                <h2>Compassionate Care for Diverse Needs</h2>
+                <p>We provide personalized support for adults who need assistance with daily living</p>
+            </div>
+
+            <div class="serve__grid">
+                <div class="serve-card">
+                    <div class="serve-card__icon serve-card__icon--teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="serve-card__title">Advanced Age</h3>
+                    <p class="serve-card__description">Adults requiring support with daily living activities in their later years</p>
+                </div>
+
+                <div class="serve-card">
+                    <div class="serve-card__icon serve-card__icon--rose">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="serve-card__title">Physical Disabilities</h3>
+                    <p class="serve-card__description">Adults with mobility challenges or physical limitations needing assistance</p>
+                </div>
+
+                <div class="serve-card">
+                    <div class="serve-card__icon serve-card__icon--blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3 class="serve-card__title">Developmental Disabilities</h3>
+                    <p class="serve-card__description">Adults with intellectual or developmental disabilities requiring supportive care</p>
+                </div>
+            </div>
+
+            <div class="serve__bottom">
+                <p>Every person deserves dignified care in a comfortable, supportive environment</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="why section">
+        <div class="container">
+            <div class="section-header">
+                <div class="accent-line"></div>
+                <span class="badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    Why Choose Us
+                </span>
+                <h2>Why Families Trust Brightway</h2>
+                <p>Our commitment to quality care and comfortable living sets us apart</p>
+            </div>
+
+            <div class="why__grid">
+                <div class="why-card">
+                    <span class="why-card__number">01</span>
+                    <div class="why-card__icon why-card__icon--teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="why-card__title">Small Home Setting</h3>
+                    <p class="why-card__description">3-4 bed capacity allows for personalized attention and a true home atmosphere</p>
+                </div>
+
+                <div class="why-card">
+                    <span class="why-card__number">02</span>
+                    <div class="why-card__icon why-card__icon--rose">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="why-card__title">Compassionate Team</h3>
+                    <p class="why-card__description">Reliable, caring staff dedicated to personalized attention and warmth</p>
+                </div>
+
+                <div class="why-card">
+                    <span class="why-card__number">03</span>
+                    <div class="why-card__icon why-card__icon--blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="why-card__title">24/7 Availability</h3>
+                    <p class="why-card__description">Round-the-clock supervision and support for complete peace of mind</p>
+                </div>
+
+                <div class="why-card">
+                    <span class="why-card__number">04</span>
+                    <div class="why-card__icon why-card__icon--teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="why-card__title">Person-Centered</h3>
+                    <p class="why-card__description">Individualized support that respects dignity, choice, and independence</p>
+                </div>
+
+                <div class="why-card">
+                    <span class="why-card__number">05</span>
+                    <div class="why-card__icon why-card__icon--rose">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="why-card__title">Family Communication</h3>
+                    <p class="why-card__description">Open communication and family involvement always encouraged</p>
+                </div>
+
+                <div class="why-card">
+                    <span class="why-card__number">06</span>
+                    <div class="why-card__icon why-card__icon--blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="why-card__title">Licensed & Certified</h3>
+                    <p class="why-card__description">Fully licensed Wisconsin Adult Family Home with trained staff</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta__card">
+                <div class="cta__bg-effects">
+                    <div class="cta__bg-circle cta__bg-circle--1"></div>
+                    <div class="cta__bg-circle cta__bg-circle--2"></div>
+                </div>
+                <div class="cta__content">
+                    <span class="cta__badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Schedule a Tour Today
+                    </span>
+                    <h2 class="cta__title">Ready to <span>Get Started?</span></h2>
+                    <p class="cta__description">
+                        We invite you to visit our home and see firsthand the caring environment we provide. Contact us today!
+                    </p>
+
+                    <div class="cta__buttons">
+                        <a href="tel:+18477459930" class="btn btn--primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            Call / WhatsApp
+                        </a>
+                        <a href="mailto:Brightwayhomecarellc@gmail.com" class="btn btn--secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Email Us
+                        </a>
+                    </div>
+
+                    <div class="cta__contact-info">
+                        <div class="cta__contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            +1 (847) 745-9930
+                        </div>
+                        <div class="cta__contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Brightwayhomecarellc@gmail.com
+                        </div>
+                        <div class="cta__contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            3610 Spenser Ln, Madison, WI 53704
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <div class="footer__logo-icon">
+                        <span>B</span>
+                    </div>
+                    <div class="footer__logo-text">
+                        <div class="footer__logo-name">Brightway Home Care LLC</div>
+                        <div class="footer__logo-tagline">Licensed Adult Family Home</div>
+                    </div>
+                </div>
+
+                <div class="footer__links">
+                    <a href="tel:+18477459930" class="footer__link">Call Us</a>
+                    <a href="mailto:Brightwayhomecarellc@gmail.com" class="footer__link">Email</a>
+                    <a href="https://wa.me/18477459930" class="footer__link">WhatsApp</a>
+                </div>
+
+                <p class="footer__copyright">
+                    &copy; 2024 Brightway Home Care LLC. All rights reserved. | Madison, Wisconsin
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
