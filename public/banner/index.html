@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brightway Home Care LLC - Licensed Adult Family Home in Madison, WI providing compassionate 24/7 care">
+    <title>Brightway Home Care LLC - Premium Digital Brochure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --blue-900:#0f172a;--blue-800:#1e3a8a;--blue-700:#1d4ed8;--blue-600:#2563eb;--blue-100:#dbeafe;
+            --teal-500:#14b8a6;--teal-400:#2dd4bf;--teal-300:#5eead4;--teal-100:#ccfbf1;
+            --rose-500:#f43f5e;--rose-400:#fb7185;
+            --white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;
+            --font-heading:'Poppins',sans-serif;--font-body:'Inter',sans-serif
+        }
+        html{scroll-behavior:smooth}
+        body{font-family:var(--font-body);font-size:16px;line-height:1.7;color:var(--gray-700);background:var(--white);overflow-x:hidden}
+        h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.2;color:var(--blue-800)}
+        .container{max-width:1280px;margin:0 auto;padding:0 1.5rem}
+
+        /* Skip Link - Accessibility */
+        .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--blue-800);color:var(--white);padding:1rem 2rem;border-radius:0 0 1rem 1rem;z-index:10000;transition:top .3s}
+        .skip-link:focus{top:0}
+
+        /* Preloader */
+        .preloader{position:fixed;inset:0;background:linear-gradient(135deg,var(--blue-900),var(--blue-800));z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
+        .preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+        .preloader__content{text-align:center}
+        .preloader__logo{width:100px;height:100px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;animation:preloader-pulse 1.5s ease-in-out infinite;box-shadow:0 0 60px rgba(45,212,191,.5)}
+        .preloader__logo img{width:70%;height:70%;object-fit:contain}
+        .preloader__text{font-family:var(--font-heading);font-size:1.25rem;color:var(--white);opacity:.8}
+        .preloader__dots span{animation:preloader-dots 1.4s infinite;animation-fill-mode:both}
+        .preloader__dots span:nth-child(2){animation-delay:.2s}
+        .preloader__dots span:nth-child(3){animation-delay:.4s}
+        @keyframes preloader-pulse{0%,100%{transform:scale(1);box-shadow:0 0 60px rgba(45,212,191,.5)}50%{transform:scale(1.05);box-shadow:0 0 80px rgba(45,212,191,.7)}}
+        @keyframes preloader-dots{0%,80%,100%{opacity:.2}40%{opacity:1}}
+
+        /* Noise Texture Overlay */
+        .noise-overlay{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+
+        /* Animations */
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+        @keyframes pulse-glow{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.7;transform:scale(1.1)}}
+        @keyframes fade-in-up{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes morph{0%,100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}50%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%}}
+        @keyframes slide-carousel{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+        @keyframes aurora{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+        @keyframes text-reveal{0%{clip-path:inset(0 100% 0 0)}100%{clip-path:inset(0 0 0 0)}}
+        @keyframes word-pop{0%{opacity:0;transform:translateY(30px) scale(.9)}100%{opacity:1;transform:translateY(0) scale(1)}}
+        @keyframes counter-glow{0%,100%{text-shadow:0 0 20px rgba(94,234,212,.3)}50%{text-shadow:0 0 40px rgba(94,234,212,.6)}}
+        @keyframes gradient-border{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        @keyframes icon-bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+        @keyframes card-3d{0%{transform:perspective(1000px) rotateY(0deg)}100%{transform:perspective(1000px) rotateY(360deg)}}
+        @keyframes quote-fade{0%{opacity:0;transform:scale(.8)}100%{opacity:.15;transform:scale(1)}}
+        .animate-float{animation:float 6s ease-in-out infinite}
+        .reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.4,0,.2,1)}
+        .reveal.active{opacity:1;transform:translateY(0)}
+        .reveal-stagger{transition-delay:calc(var(--i) * .1s)}
+
+        /* Scroll Progress - Enhanced */
+        .scroll-progress{position:fixed;top:0;left:0;width:100%;height:4px;background:rgba(255,255,255,.1);z-index:1001}
+        .scroll-progress__bar{height:100%;background:linear-gradient(90deg,var(--teal-400),var(--teal-300),var(--rose-400),var(--teal-400));background-size:300% 100%;width:0%;transition:width .1s;box-shadow:0 0 20px rgba(45,212,191,.6),0 0 40px rgba(45,212,191,.3)}
+
+        /* Header */
+        .header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0;transition:all .3s}
+        .header--scrolled{background:rgba(15,23,42,.95);backdrop-filter:blur(20px);box-shadow:0 4px 30px rgba(0,0,0,.3);padding:.75rem 0}
+        .header__content{display:flex;align-items:center;justify-content:space-between}
+        .header__logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+        .header__logo-icon{width:48px;height:48px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:.25rem;box-shadow:0 4px 20px rgba(0,0,0,.2);transition:transform .3s,box-shadow .3s}
+        .header__logo:hover .header__logo-icon{transform:scale(1.05);box-shadow:0 8px 30px rgba(45,212,191,.4)}
+        .header__logo-icon img{width:100%;height:100%;object-fit:contain}
+        .header__logo-text{display:none}
+        @media(min-width:640px){.header__logo-text{display:block}.header__logo-name{font-family:var(--font-heading);font-weight:700;color:var(--white);font-size:1.1rem}.header__logo-tagline{font-size:.75rem;color:var(--teal-300)}}
+        .header__btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.5rem;font-size:.9rem;font-weight:600;border-radius:9999px;text-decoration:none;background:linear-gradient(135deg,var(--teal-400),var(--teal-500));color:var(--blue-900);transition:all .3s;position:relative;overflow:hidden}
+        .header__btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transform:translateX(-100%);transition:transform .5s}
+        .header__btn:hover::before{transform:translateX(100%)}
+        .header__btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(45,212,191,.4)}
+        .header__btn svg{width:1rem;height:1rem}
+        .header__btn-text{display:none}
+        @media(min-width:480px){.header__btn-text{display:inline}}
+
+        /* Floating Actions - Enhanced */
+        .floating-actions{position:fixed;bottom:2rem;right:2rem;z-index:998;display:flex;flex-direction:column;gap:.75rem;align-items:flex-end}
+        .floating-actions__toggle{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--teal-400),var(--teal-500));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(45,212,191,.4);transition:all .3s;position:relative}
+        .floating-actions__toggle::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:linear-gradient(135deg,var(--teal-300),var(--rose-400));z-index:-1;opacity:0;transition:opacity .3s}
+        .floating-actions__toggle:hover::before{opacity:1}
+        .floating-actions__toggle:hover{transform:scale(1.1)}
+        .floating-actions__toggle svg{width:28px;height:28px;color:var(--blue-900);transition:transform .4s cubic-bezier(.68,-.55,.265,1.55)}
+        .floating-actions__menu{display:flex;flex-direction:column;gap:.5rem;opacity:0;transform:translateY(20px) scale(.9);pointer-events:none;transition:all .4s cubic-bezier(.68,-.55,.265,1.55)}
+        .floating-actions.open .floating-actions__menu{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+        .floating-actions.open .floating-actions__toggle svg{transform:rotate(135deg)}
+        .floating-actions__btn{display:flex;align-items:center;gap:.75rem;padding:.75rem 1.25rem;background:var(--white);border-radius:9999px;text-decoration:none;color:var(--gray-800);font-size:.9rem;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:all .3s;transform:translateX(100px);opacity:0}
+        .floating-actions.open .floating-actions__btn{transform:translateX(0);opacity:1}
+        .floating-actions.open .floating-actions__btn:nth-child(1){transition-delay:.05s}
+        .floating-actions.open .floating-actions__btn:nth-child(2){transition-delay:.1s}
+        .floating-actions.open .floating-actions__btn:nth-child(3){transition-delay:.15s}
+        .floating-actions.open .floating-actions__btn:nth-child(4){transition-delay:.2s}
+        .floating-actions__btn:hover{transform:translateX(-8px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+        .floating-actions__btn svg{width:20px;height:20px}
+        .floating-actions__btn--call svg{color:var(--teal-500)}
+        .floating-actions__btn--whatsapp svg{color:#25D366}
+        .floating-actions__btn--email svg{color:var(--blue-600)}
+        .floating-actions__btn--location svg{color:var(--rose-500)}
+
+        /* Hero - Enhanced with Aurora Gradient & Parallax */
+        .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 40%,#1d4ed8 70%,#2563eb 100%)}
+        .hero__bg{position:absolute;inset:0;overflow:hidden}
+        .hero__aurora{position:absolute;inset:-50%;background:linear-gradient(45deg,rgba(45,212,191,.2) 0%,rgba(94,234,212,.15) 25%,rgba(37,99,235,.2) 50%,rgba(251,113,133,.1) 75%,rgba(45,212,191,.2) 100%);background-size:400% 400%;animation:aurora 15s ease infinite;filter:blur(60px)}
+        .hero__bg-gradient{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 40%,rgba(45,212,191,.25) 0%,transparent 50%),radial-gradient(ellipse 60% 40% at 80% 60%,rgba(94,234,212,.2) 0%,transparent 45%),radial-gradient(ellipse 50% 30% at 50% 80%,rgba(251,113,133,.15) 0%,transparent 40%)}
+        .hero__blob{position:absolute;width:500px;height:500px;background:linear-gradient(135deg,rgba(45,212,191,.3),rgba(94,234,212,.2));filter:blur(80px);animation:morph 8s ease-in-out infinite,float 10s ease-in-out infinite}
+        .hero__blob--1{top:-150px;right:-100px}
+        .hero__blob--2{bottom:-200px;left:-150px;background:linear-gradient(135deg,rgba(251,113,133,.2),rgba(244,63,94,.15));animation-delay:-4s}
+        .hero__mesh{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:50px 50px}
+        .hero__particles{position:absolute;inset:0;overflow:hidden}
+        .hero__particle{position:absolute;width:6px;height:6px;background:rgba(255,255,255,.4);border-radius:50%;animation:float 8s ease-in-out infinite;box-shadow:0 0 10px rgba(255,255,255,.3)}
+        .hero__particle:nth-child(1){top:20%;left:10%}
+        .hero__particle:nth-child(2){top:40%;left:25%;animation-delay:-2s;width:4px;height:4px}
+        .hero__particle:nth-child(3){top:60%;left:80%;animation-delay:-4s}
+        .hero__particle:nth-child(4){top:30%;left:70%;animation-delay:-1s;width:8px;height:8px}
+        .hero__particle:nth-child(5){top:70%;left:40%;animation-delay:-3s}
+        .hero__particle:nth-child(6){top:15%;left:60%;animation-delay:-5s}
+        .hero__particle:nth-child(7){top:85%;left:15%;animation-delay:-2.5s;width:5px;height:5px}
+        .hero__particle:nth-child(8){top:50%;left:90%;animation-delay:-6s}
+        .hero__content{position:relative;z-index:10;padding-top:6rem}
+        .hero__grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:center}
+        @media(min-width:1024px){.hero__grid{grid-template-columns:1.2fr 1fr;gap:4rem}}
+
+        /* Hero Badge Enhanced */
+        .hero__badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:.5rem 1rem;border-radius:9999px;font-size:.875rem;color:var(--white);margin-bottom:1.5rem;animation:fade-in-up .8s ease forwards;animation-delay:.2s;opacity:0}
+        .hero__badge svg{width:1rem;height:1rem;color:var(--teal-300)}
+
+        /* Hero Title - Split Animation */
+        .hero__title{font-size:clamp(2.5rem,6vw,4rem);font-weight:800;color:var(--white);margin-bottom:1rem;line-height:1.1}
+        .hero__title-line{display:block;overflow:hidden}
+        .hero__title-word{display:inline-block;animation:word-pop .6s ease forwards;opacity:0}
+        .hero__title-word:nth-child(1){animation-delay:.4s}
+        .hero__title-word:nth-child(2){animation-delay:.5s}
+        .hero__title-word:nth-child(3){animation-delay:.6s}
+        .hero__title-highlight{color:var(--teal-300);text-shadow:0 0 40px rgba(94,234,212,.5);position:relative}
+        .hero__title-highlight::after{content:'';position:absolute;bottom:-.1em;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--teal-400),var(--teal-300));border-radius:2px;transform:scaleX(0);animation:text-reveal .8s ease forwards;animation-delay:1s}
+
+        .hero__tagline{font-size:1.25rem;color:#99f6e4;font-weight:600;margin-bottom:1rem;letter-spacing:.1em;animation:fade-in-up .8s ease forwards;animation-delay:.7s;opacity:0}
+        .hero__description{font-size:1.125rem;color:rgba(255,255,255,.8);max-width:500px;margin-bottom:2rem;line-height:1.8;animation:fade-in-up .8s ease forwards;animation-delay:.8s;opacity:0}
+        .hero__cta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;animation:fade-in-up .8s ease forwards;animation-delay:.9s;opacity:0}
+        .hero__btn{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2rem;font-size:1rem;font-weight:600;border-radius:9999px;text-decoration:none;transition:all .3s;position:relative;overflow:hidden}
+        .hero__btn--primary{background:linear-gradient(135deg,var(--teal-400),var(--teal-500));color:var(--blue-900);box-shadow:0 10px 40px rgba(45,212,191,.4)}
+        .hero__btn--primary::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transform:translateX(-100%);transition:transform .6s}
+        .hero__btn--primary:hover::before{transform:translateX(100%)}
+        .hero__btn--primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 15px 50px rgba(45,212,191,.5)}
+        .hero__btn--secondary{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.5);backdrop-filter:blur(5px)}
+        .hero__btn--secondary:hover{background:rgba(255,255,255,.1);border-color:var(--white);transform:translateY(-3px)}
+        .hero__btn svg{width:1.25rem;height:1.25rem}
+        .hero__trust{display:flex;flex-wrap:wrap;gap:1.5rem;animation:fade-in-up .8s ease forwards;animation-delay:1s;opacity:0}
+        .hero__trust-item{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.8);font-size:.9rem;transition:all .3s}
+        .hero__trust-item:hover{color:var(--white);transform:translateX(5px)}
+        .hero__trust-item svg{width:1.25rem;height:1.25rem;color:var(--teal-300)}
+
+        /* Hero Visual - 3D Card */
+        .hero__visual{display:none;justify-content:center;align-items:center;perspective:1000px}
+        @media(min-width:1024px){.hero__visual{display:flex}}
+        .hero__card{position:relative;width:350px;height:400px;transform-style:preserve-3d;animation:fade-in-up 1s ease forwards;animation-delay:.5s;opacity:0}
+        .hero__card-main{position:absolute;inset:0;background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.2);border-radius:2rem;padding:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:float 6s ease-in-out infinite;transition:transform .3s,box-shadow .3s}
+        .hero__card:hover .hero__card-main{transform:rotateY(5deg) rotateX(5deg);box-shadow:0 30px 60px rgba(0,0,0,.3)}
+        .hero__card-logo{width:120px;height:120px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.3);overflow:hidden;padding:.5rem;transition:transform .3s}
+        .hero__card:hover .hero__card-logo{transform:scale(1.05) rotate(5deg)}
+        .hero__card-logo img{width:100%;height:100%;object-fit:contain}
+        .hero__card-title{font-family:var(--font-heading);font-size:1.75rem;font-weight:800;color:var(--white);margin-bottom:.25rem}
+        .hero__card-subtitle{font-size:1rem;color:var(--teal-300);font-weight:500}
+        .hero__floating-icon{position:absolute;width:60px;height:60px;background:linear-gradient(135deg,var(--rose-400),var(--rose-500));border-radius:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(244,63,94,.4);animation:float 5s ease-in-out infinite;transition:transform .3s}
+        .hero__floating-icon:hover{transform:scale(1.2) rotate(10deg)}
+        .hero__floating-icon--1{top:-20px;right:-20px}
+        .hero__floating-icon--2{bottom:40px;left:-30px;background:linear-gradient(135deg,var(--teal-400),var(--teal-500));box-shadow:0 10px 30px rgba(45,212,191,.4);animation-delay:-2s}
+        .hero__floating-icon--3{top:60px;left:-40px;background:linear-gradient(135deg,var(--blue-600),var(--blue-700));box-shadow:0 10px 30px rgba(37,99,235,.4);animation-delay:-4s;width:50px;height:50px;border-radius:50%}
+        .hero__floating-icon svg{width:28px;height:28px;color:var(--white)}
+        .hero__wave{position:absolute;bottom:-1px;left:0;right:0;z-index:5}
+        .hero__wave svg{display:block;width:100%;height:auto}
+
+        /* Stats - Enhanced with Animated Counters */
+        .stats{padding:5rem 0;background:var(--white);position:relative;z-index:10}
+        .stats__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+        @media(min-width:768px){.stats__grid{grid-template-columns:repeat(4,1fr)}}
+        .stats__card{background:linear-gradient(135deg,var(--blue-800),var(--blue-700));border-radius:1.5rem;padding:2rem 1.5rem;text-align:center;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer}
+        .stats__card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal-400),var(--teal-300),var(--rose-400));background-size:200% 100%;animation:gradient-border 3s linear infinite}
+        .stats__card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(45,212,191,.2),transparent 70%);opacity:0;transition:opacity .3s}
+        .stats__card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 25px 80px rgba(30,58,138,.4)}
+        .stats__card:hover::after{opacity:1}
+        .stats__icon{width:48px;height:48px;margin:0 auto 1rem;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s}
+        .stats__card:hover .stats__icon{transform:scale(1.1);background:rgba(45,212,191,.3)}
+        .stats__icon svg{width:24px;height:24px;color:var(--teal-300)}
+        .stats__number{font-family:var(--font-heading);font-size:2.5rem;font-weight:800;color:var(--teal-300);margin-bottom:.5rem;transition:all .3s}
+        .stats__card:hover .stats__number{animation:counter-glow 1s ease infinite}
+        .stats__label{font-size:.9rem;color:rgba(255,255,255,.8);font-weight:500}
+
+        /* About - Enhanced */
+        .about{padding:6rem 0;background:linear-gradient(180deg,var(--white) 0%,var(--gray-50) 100%);position:relative;overflow:hidden}
+        .about::before{content:'';position:absolute;top:50%;right:-200px;width:400px;height:400px;background:radial-gradient(circle,rgba(45,212,191,.1),transparent 70%);border-radius:50%}
+        .about__grid{display:grid;grid-template-columns:1fr;gap:4rem;align-items:center}
+        @media(min-width:1024px){.about__grid{grid-template-columns:1fr 1fr}}
+        .about__image{position:relative}
+        .about__img-container{position:relative;border-radius:2rem;overflow:hidden}
+        .about__img-container::before{content:'';position:absolute;inset:0;background:linear-gradient(45deg,rgba(45,212,191,.2),transparent);z-index:1;opacity:0;transition:opacity .3s}
+        .about__img-container:hover::before{opacity:1}
+        .about__img{width:100%;border-radius:2rem;box-shadow:0 25px 80px rgba(0,0,0,.15);transition:transform .5s}
+        .about__img-container:hover .about__img{transform:scale(1.02)}
+        .about__badge{position:absolute;background:var(--white);padding:1rem 1.5rem;border-radius:1rem;box-shadow:0 10px 40px rgba(0,0,0,.1);display:flex;align-items:center;gap:.75rem;z-index:2;transition:transform .3s,box-shadow .3s}
+        .about__badge:hover{transform:translateY(-5px);box-shadow:0 15px 50px rgba(0,0,0,.15)}
+        .about__badge--1{top:2rem;right:-1rem}
+        .about__badge--2{bottom:2rem;left:-1rem}
+        .about__badge-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+        .about__badge:hover .about__badge-icon{transform:rotate(10deg)}
+        .about__badge-icon--teal{background:linear-gradient(135deg,var(--teal-400),var(--teal-500))}
+        .about__badge-icon--rose{background:linear-gradient(135deg,var(--rose-400),var(--rose-500))}
+        .about__badge-icon svg{width:24px;height:24px;color:var(--white)}
+        .about__badge-text{font-family:var(--font-heading);font-weight:700;color:var(--blue-800)}
+        .about__content{text-align:center}
+        @media(min-width:1024px){.about__content{text-align:left}}
+        .section-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal-100);color:var(--teal-500);padding:.5rem 1rem;border-radius:9999px;font-size:.875rem;font-weight:600;margin-bottom:1rem;transition:all .3s}
+        .section-badge:hover{background:var(--teal-400);color:var(--white)}
+        .section-badge svg{width:1rem;height:1rem}
+        .section-title{font-size:clamp(2rem,4vw,2.75rem);margin-bottom:1.5rem}
+        .section-title span{color:var(--teal-400);position:relative}
+        .about__text{color:var(--gray-600);margin-bottom:1.5rem;font-size:1.1rem}
+        .about__features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+        .about__feature{display:flex;align-items:center;gap:.75rem;padding:1rem;background:var(--white);border-radius:1rem;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:all .3s;cursor:pointer}
+        .about__feature:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.1);background:linear-gradient(135deg,var(--white),var(--teal-100))}
+        .about__feature svg{width:24px;height:24px;color:var(--teal-400);flex-shrink:0;transition:transform .3s}
+        .about__feature:hover svg{transform:scale(1.2)}
+        .about__feature span{font-weight:500;font-size:.9rem;color:var(--gray-700)}
+
+        /* Services - BENTO GRID */
+        .services{padding:6rem 0;background:var(--gray-50);position:relative}
+        .services::before{content:'';position:absolute;top:0;left:0;right:0;height:200px;background:linear-gradient(180deg,var(--white),transparent)}
+        .services__header{text-align:center;margin-bottom:4rem;position:relative;z-index:1}
+        .services__grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+        @media(min-width:640px){.services__grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.services__grid{grid-template-columns:repeat(12,1fr);grid-template-rows:auto auto}}
+
+        .service-card{background:var(--white);border-radius:1.5rem;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.08);transition:all .4s cubic-bezier(.4,0,.2,1);position:relative}
+        .service-card::before{content:'';position:absolute;inset:0;border-radius:1.5rem;padding:2px;background:linear-gradient(135deg,var(--teal-400),var(--blue-600),var(--rose-400));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
+        .service-card:hover::before{opacity:1}
+        .service-card:hover{transform:translateY(-12px);box-shadow:0 25px 80px rgba(0,0,0,.15)}
+
+        /* Bento sizes */
+        @media(min-width:1024px){
+            .service-card:nth-child(1){grid-column:span 6;grid-row:span 1}
+            .service-card:nth-child(2){grid-column:span 3;grid-row:span 1}
+            .service-card:nth-child(3){grid-column:span 3;grid-row:span 1}
+            .service-card:nth-child(4){grid-column:span 4;grid-row:span 1}
+            .service-card:nth-child(5){grid-column:span 4;grid-row:span 1}
+            .service-card:nth-child(6){grid-column:span 4;grid-row:span 1}
+        }
+
+        .service-card__header{padding:2rem;position:relative;overflow:hidden}
+        .service-card__header::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.2),transparent 50%)}
+        .service-card__header--teal{background:linear-gradient(135deg,var(--teal-400),var(--teal-500))}
+        .service-card__header--blue{background:linear-gradient(135deg,var(--blue-600),var(--blue-700))}
+        .service-card__header--rose{background:linear-gradient(135deg,var(--rose-400),var(--rose-500))}
+        .service-card__number{position:absolute;top:1rem;right:1.5rem;font-family:var(--font-heading);font-size:3rem;font-weight:800;color:rgba(255,255,255,.2);transition:all .3s}
+        .service-card:hover .service-card__number{color:rgba(255,255,255,.4);transform:scale(1.1)}
+        .service-card__icon{width:64px;height:64px;background:rgba(255,255,255,.2);border-radius:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;transition:all .3s;backdrop-filter:blur(5px)}
+        .service-card:hover .service-card__icon{transform:scale(1.1) rotate(5deg);background:rgba(255,255,255,.3)}
+        .service-card__icon svg{width:32px;height:32px;color:var(--white)}
+        .service-card__title{font-size:1.25rem;color:var(--white);margin-bottom:.5rem}
+        .service-card__body{padding:2rem}
+        .service-card__description{color:var(--gray-600);margin-bottom:1.5rem;font-size:.95rem}
+        .service-card__features{list-style:none}
+        .service-card__features li{display:flex;align-items:center;gap:.5rem;padding:.5rem 0;font-size:.9rem;color:var(--gray-700);transition:all .3s}
+        .service-card__features li:hover{transform:translateX(5px);color:var(--blue-800)}
+        .service-card__features svg{width:18px;height:18px;color:var(--teal-400);flex-shrink:0}
+
+        /* Testimonials - Enhanced 3D Carousel */
+        .testimonials{padding:6rem 0;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);position:relative;overflow:hidden}
+        .testimonials::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 40%,rgba(45,212,191,.15) 0%,transparent 50%),radial-gradient(ellipse 60% 40% at 80% 60%,rgba(94,234,212,.1) 0%,transparent 45%)}
+        .testimonials__header{text-align:center;margin-bottom:4rem;position:relative;z-index:1}
+        .testimonials .section-badge{background:rgba(255,255,255,.1);color:var(--teal-300)}
+        .testimonials .section-title{color:var(--white)}
+        .testimonials .section-title span{color:var(--teal-300)}
+        .testimonials__container{position:relative;overflow:hidden;padding:2rem 0}
+        .testimonials__track{display:flex;gap:2rem;animation:slide-carousel 35s linear infinite}
+        .testimonials__track:hover{animation-play-state:paused}
+
+        .testimonial-card{flex:0 0 400px;background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:1.5rem;padding:2rem;position:relative;transition:all .4s cubic-bezier(.4,0,.2,1);overflow:hidden}
+        .testimonial-card::before{content:'"';position:absolute;top:1rem;left:1.5rem;font-size:6rem;font-family:Georgia,serif;color:rgba(45,212,191,.15);line-height:1;animation:quote-fade 1s ease forwards;transition:all .3s}
+        .testimonial-card:hover::before{color:rgba(45,212,191,.25);transform:scale(1.1)}
+        .testimonial-card:hover{transform:translateY(-10px) scale(1.02);background:rgba(255,255,255,.12);border-color:rgba(45,212,191,.3);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+        .testimonial-card__stars{display:flex;gap:.25rem;margin-bottom:1rem;position:relative;z-index:1}
+        .testimonial-card__stars svg{width:20px;height:20px;color:#fbbf24;fill:#fbbf24;transition:transform .2s}
+        .testimonial-card:hover .testimonial-card__stars svg{animation:icon-bounce .4s ease}
+        .testimonial-card:hover .testimonial-card__stars svg:nth-child(1){animation-delay:0s}
+        .testimonial-card:hover .testimonial-card__stars svg:nth-child(2){animation-delay:.05s}
+        .testimonial-card:hover .testimonial-card__stars svg:nth-child(3){animation-delay:.1s}
+        .testimonial-card:hover .testimonial-card__stars svg:nth-child(4){animation-delay:.15s}
+        .testimonial-card:hover .testimonial-card__stars svg:nth-child(5){animation-delay:.2s}
+        .testimonial-card__quote{color:rgba(255,255,255,.9);font-size:1.1rem;font-style:italic;margin-bottom:1.5rem;line-height:1.8;position:relative;z-index:1}
+        .testimonial-card__author{display:flex;align-items:center;gap:1rem;position:relative;z-index:1}
+        .testimonial-card__avatar{width:50px;height:50px;background:linear-gradient(135deg,var(--teal-400),var(--teal-500));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;color:var(--white);font-size:1.25rem;transition:all .3s;position:relative}
+        .testimonial-card__avatar::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:linear-gradient(135deg,var(--teal-300),var(--rose-400));z-index:-1;opacity:0;transition:opacity .3s}
+        .testimonial-card:hover .testimonial-card__avatar::before{opacity:1}
+        .testimonial-card:hover .testimonial-card__avatar{transform:scale(1.1)}
+        .testimonial-card__info h4{color:var(--white);font-size:1rem;margin-bottom:.25rem}
+        .testimonial-card__info span{color:var(--teal-300);font-size:.875rem}
+
+        /* Why Choose Us - Enhanced */
+        .why{padding:6rem 0;background:var(--white);position:relative;overflow:hidden}
+        .why::before{content:'';position:absolute;bottom:-100px;left:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(45,212,191,.1),transparent 70%);border-radius:50%}
+        .why__header{text-align:center;margin-bottom:4rem}
+        .why__grid{display:grid;grid-template-columns:1fr;gap:2rem}
+        @media(min-width:640px){.why__grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.why__grid{grid-template-columns:repeat(3,1fr)}}
+        .why-card{background:var(--gray-50);border-radius:1.5rem;padding:2.5rem;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer}
+        .why-card::before{content:'';position:absolute;inset:0;border-radius:1.5rem;padding:2px;background:linear-gradient(135deg,var(--teal-400),var(--blue-600),var(--rose-400));background-size:200% 200%;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s;animation:gradient-border 4s linear infinite paused}
+        .why-card:hover::before{opacity:1;animation-play-state:running}
+        .why-card:hover{transform:translateY(-12px);box-shadow:0 25px 80px rgba(0,0,0,.12);background:var(--white)}
+        .why-card__number{position:absolute;top:1.5rem;right:1.5rem;font-family:var(--font-heading);font-size:4rem;font-weight:800;color:rgba(45,212,191,.1);transition:all .3s}
+        .why-card:hover .why-card__number{color:rgba(45,212,191,.2);transform:scale(1.1) rotate(-5deg)}
+        .why-card__icon{width:64px;height:64px;border-radius:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:all .4s;position:relative}
+        .why-card__icon::before{content:'';position:absolute;inset:0;border-radius:1rem;background:inherit;filter:blur(15px);opacity:0;transition:opacity .3s}
+        .why-card:hover .why-card__icon::before{opacity:.5}
+        .why-card:hover .why-card__icon{transform:scale(1.1) rotate(5deg)}
+        .why-card__icon--teal{background:linear-gradient(135deg,var(--teal-400),var(--teal-500))}
+        .why-card__icon--blue{background:linear-gradient(135deg,var(--blue-600),var(--blue-700))}
+        .why-card__icon--rose{background:linear-gradient(135deg,var(--rose-400),var(--rose-500))}
+        .why-card__icon svg{width:32px;height:32px;color:var(--white)}
+        .why-card__title{font-size:1.25rem;margin-bottom:.75rem;transition:color .3s}
+        .why-card:hover .why-card__title{color:var(--teal-500)}
+        .why-card__description{color:var(--gray-600);font-size:.95rem;transition:color .3s}
+        .why-card:hover .why-card__description{color:var(--gray-700)}
+
+        /* CTA - Enhanced */
+        .cta{padding:6rem 0;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#1d4ed8 100%);position:relative;overflow:hidden}
+        .cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 40%,rgba(45,212,191,.2) 0%,transparent 50%),radial-gradient(ellipse 60% 40% at 80% 60%,rgba(94,234,212,.15) 0%,transparent 45%)}
+        .cta__aurora{position:absolute;inset:-50%;background:linear-gradient(45deg,rgba(45,212,191,.1) 0%,rgba(94,234,212,.05) 25%,rgba(37,99,235,.1) 50%,rgba(251,113,133,.05) 75%,rgba(45,212,191,.1) 100%);background-size:400% 400%;animation:aurora 20s ease infinite;filter:blur(80px)}
+        .cta__content{position:relative;z-index:1;text-align:center;max-width:800px;margin:0 auto}
+        .cta .section-badge{background:rgba(255,255,255,.1);color:var(--teal-300)}
+        .cta .section-title{color:var(--white)}
+        .cta .section-title span{color:var(--teal-300)}
+        .cta__description{color:rgba(255,255,255,.8);font-size:1.2rem;margin-bottom:2.5rem}
+        .cta__buttons{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:3rem}
+        .cta__btn{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2rem;font-size:1rem;font-weight:600;border-radius:9999px;text-decoration:none;transition:all .3s;position:relative;overflow:hidden}
+        .cta__btn--primary{background:linear-gradient(135deg,var(--teal-400),var(--teal-500));color:var(--blue-900);box-shadow:0 10px 40px rgba(45,212,191,.4)}
+        .cta__btn--primary::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transform:translateX(-100%);transition:transform .6s}
+        .cta__btn--primary:hover::before{transform:translateX(100%)}
+        .cta__btn--primary:hover{transform:translateY(-3px);box-shadow:0 15px 50px rgba(45,212,191,.5)}
+        .cta__btn--secondary{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.5)}
+        .cta__btn--secondary:hover{background:rgba(255,255,255,.1);border-color:var(--white)}
+        .cta__btn svg{width:1.25rem;height:1.25rem}
+        .cta__info{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem}
+        .cta__info-item{display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.9);transition:all .3s;cursor:pointer}
+        .cta__info-item:hover{color:var(--white);transform:translateY(-2px)}
+        .cta__info-item svg{width:24px;height:24px;color:var(--teal-300)}
+
+        /* Footer - Enhanced */
+        .footer{padding:3rem 0;background:var(--blue-900);text-align:center;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal-400),transparent)}
+        .footer__logo{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-bottom:1.5rem}
+        .footer__logo-icon{width:48px;height:48px;background:var(--white);border-radius:50%;overflow:hidden;padding:.25rem;transition:transform .3s}
+        .footer__logo:hover .footer__logo-icon{transform:scale(1.1) rotate(10deg)}
+        .footer__logo-icon img{width:100%;height:100%;object-fit:contain}
+        .footer__logo-text{font-family:var(--font-heading);font-weight:700;color:var(--white);font-size:1.25rem}
+        .footer__tagline{color:var(--teal-300);font-size:.9rem;margin-bottom:1.5rem}
+        .footer__copy{color:rgba(255,255,255,.6);font-size:.875rem}
+
+        /* Reduced Motion */
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+        }
+
+        /* Focus States - Accessibility */
+        a:focus-visible,button:focus-visible{outline:3px solid var(--teal-400);outline-offset:3px}
+
+        /* Mobile Touch Optimizations */
+        @media(max-width:640px){
+            .hero__btn,.cta__btn,.header__btn{min-height:48px}
+            .floating-actions__btn{min-height:48px}
+            .about__feature{min-height:48px}
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link - Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo"><img src="/logo.png" alt=""></div>
+            <div class="preloader__text">Loading<span class="preloader__dots"><span>.</span><span>.</span><span>.</span></span></div>
+        </div>
+    </div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"><div class="scroll-progress__bar" id="scrollProgress"></div></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="#" class="header__logo">
+                    <div class="header__logo-icon"><img src="/logo.png" alt="Brightway Home Care Logo"></div>
+                    <div class="header__logo-text">
+                        <div class="header__logo-name">Brightway Home Care</div>
+                        <div class="header__logo-tagline">Licensed Adult Family Home</div>
+                    </div>
+                </a>
+                <a href="tel:+18477459930" class="header__btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span class="header__btn-text">Call Now</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions" id="floatingActions">
+        <div class="floating-actions__menu">
+            <a href="tel:+18477459930" class="floating-actions__btn floating-actions__btn--call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call Us</a>
+            <a href="https://wa.me/18477459930" class="floating-actions__btn floating-actions__btn--whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
+            <a href="mailto:Brightwayhomecarellc@gmail.com" class="floating-actions__btn floating-actions__btn--email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>Email</a>
+            <a href="https://maps.google.com/?q=3610+Spenser+Ln+Madison+WI+53704" class="floating-actions__btn floating-actions__btn--location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Directions</a>
+        </div>
+        <button class="floating-actions__toggle" id="floatingToggle" aria-label="Quick actions menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </button>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="hero__bg">
+                <div class="hero__aurora"></div>
+                <div class="hero__bg-gradient"></div>
+                <div class="hero__mesh"></div>
+                <div class="hero__blob hero__blob--1"></div>
+                <div class="hero__blob hero__blob--2"></div>
+                <div class="hero__particles">
+                    <div class="hero__particle"></div><div class="hero__particle"></div><div class="hero__particle"></div>
+                    <div class="hero__particle"></div><div class="hero__particle"></div><div class="hero__particle"></div>
+                    <div class="hero__particle"></div><div class="hero__particle"></div>
+                </div>
+            </div>
+            <div class="container hero__content">
+                <div class="hero__grid">
+                    <div>
+                        <div class="hero__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>Licensed Adult Family Home in Madison, WI</div>
+                        <h1 class="hero__title">
+                            <span class="hero__title-line">
+                                <span class="hero__title-word">A</span>
+                                <span class="hero__title-word">Place</span>
+                                <span class="hero__title-word">to</span>
+                                <span class="hero__title-word">Call</span>
+                            </span>
+                            <span class="hero__title-line">
+                                <span class="hero__title-word hero__title-highlight">Home</span>
+                            </span>
+                        </h1>
+                        <p class="hero__tagline">Safe • Supportive • 24/7 Care</p>
+                        <p class="hero__description">Personalized care in a small, peaceful home setting where your loved ones are treated like family.</p>
+                        <div class="hero__cta">
+                            <a href="tel:+18477459930" class="hero__btn hero__btn--primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call / WhatsApp Now</a>
+                            <a href="#cta" class="hero__btn hero__btn--secondary">Schedule a Tour<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
+                        <div class="hero__trust">
+                            <div class="hero__trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Licensed & Certified</div>
+                            <div class="hero__trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>24/7 Care</div>
+                            <div class="hero__trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>Family-Owned</div>
+                        </div>
+                    </div>
+                    <div class="hero__visual">
+                        <div class="hero__card">
+                            <div class="hero__card-main">
+                                <div class="hero__card-logo"><img src="/logo.png" alt="Brightway Home Care Logo"></div>
+                                <div class="hero__card-title">Brightway</div>
+                                <div class="hero__card-subtitle">Home Care LLC</div>
+                            </div>
+                            <div class="hero__floating-icon hero__floating-icon--1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+                            <div class="hero__floating-icon hero__floating-icon--2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                            <div class="hero__floating-icon hero__floating-icon--3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__wave"><svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none"><path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#ffffff"></path></svg></div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats" id="stats">
+            <div class="container">
+                <div class="stats__grid">
+                    <div class="stats__card reveal" style="--i:0">
+                        <div class="stats__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                        <div class="stats__number" data-target="24" data-suffix="/7">24/7</div>
+                        <div class="stats__label">Round-the-Clock Care</div>
+                    </div>
+                    <div class="stats__card reveal" style="--i:1">
+                        <div class="stats__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                        <div class="stats__number" data-target="4" data-prefix="3-">3-4</div>
+                        <div class="stats__label">Resident Capacity</div>
+                    </div>
+                    <div class="stats__card reveal" style="--i:2">
+                        <div class="stats__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+                        <div class="stats__number" data-target="100" data-suffix="%">100%</div>
+                        <div class="stats__label">Person-Centered</div>
+                    </div>
+                    <div class="stats__card reveal" style="--i:3">
+                        <div class="stats__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+                        <div class="stats__number" data-target="2024">2024</div>
+                        <div class="stats__label">Established</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__image reveal">
+                        <div class="about__img-container">
+                            <img src="/images/Welcoming_Environment/sitting_room.jpg" alt="Brightway Home Care Living Room" class="about__img">
+                        </div>
+                        <div class="about__badge about__badge--1 animate-float">
+                            <div class="about__badge-icon about__badge-icon--teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+                            <div class="about__badge-text">With Love</div>
+                        </div>
+                        <div class="about__badge about__badge--2 animate-float" style="animation-delay:-3s">
+                            <div class="about__badge-icon about__badge-icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <div class="about__badge-text">Madison, WI</div>
+                        </div>
+                    </div>
+                    <div class="about__content reveal">
+                        <div class="section-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>About Us</div>
+                        <h2 class="section-title">Compassionate Care in a <span>Home Setting</span></h2>
+                        <p class="about__text">Brightway Home Care LLC is a licensed Adult Family Home in Madison, Wisconsin, providing personalized care in an intimate, family-like environment. Our small home setting ensures each resident receives the individual attention they deserve.</p>
+                        <p class="about__text">We believe everyone deserves to live with dignity, comfort, and joy. Our dedicated caregivers are committed to creating a safe, supportive atmosphere where residents can thrive.</p>
+                        <div class="about__features">
+                            <div class="about__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Licensed Facility</span></div>
+                            <div class="about__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span>24/7 Supervision</span></div>
+                            <div class="about__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Home-Cooked Meals</span></div>
+                            <div class="about__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Personalized Care</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services - Bento Grid -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="services__header">
+                    <div class="section-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Our Services</div>
+                    <h2 class="section-title">Comprehensive Care <span>Services</span></h2>
+                </div>
+                <div class="services__grid">
+                    <div class="service-card reveal" style="--i:0">
+                        <div class="service-card__header service-card__header--teal">
+                            <span class="service-card__number">01</span>
+                            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                            <h3 class="service-card__title">ADL Support</h3>
+                        </div>
+                        <div class="service-card__body">
+                            <p class="service-card__description">Compassionate assistance with daily living activities to maintain dignity and independence.</p>
+                            <ul class="service-card__features">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Bathing & grooming</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Dressing assistance</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Personal hygiene</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card reveal" style="--i:1">
+                        <div class="service-card__header service-card__header--teal">
+                            <span class="service-card__number">02</span>
+                            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg></div>
+                            <h3 class="service-card__title">Meals & Nutrition</h3>
+                        </div>
+                        <div class="service-card__body">
+                            <p class="service-card__description">Nutritious, home-cooked meals tailored to dietary needs.</p>
+                            <ul class="service-card__features">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Balanced nutrition</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Dietary accommodations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card reveal" style="--i:2">
+                        <div class="service-card__header service-card__header--blue">
+                            <span class="service-card__number">03</span>
+                            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                            <h3 class="service-card__title">Safety Supervision</h3>
+                        </div>
+                        <div class="service-card__body">
+                            <p class="service-card__description">Round-the-clock monitoring and support.</p>
+                            <ul class="service-card__features">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>24/7 monitoring</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Emergency response</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card reveal" style="--i:3">
+                        <div class="service-card__header service-card__header--blue">
+                            <span class="service-card__number">04</span>
+                            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>
+                            <h3 class="service-card__title">Medication Support</h3>
+                        </div>
+                        <div class="service-card__body">
+                            <p class="service-card__description">Medication reminders and support as permitted by licensing guidelines.</p>
+                            <ul class="service-card__features">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Timely reminders</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Proper storage</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card reveal" style="--i:4">
+                        <div class="service-card__header service-card__header--rose">
+                            <span class="service-card__number">05</span>
+                            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></div>
+                            <h3 class="service-card__title">Mobility Care</h3>
+                        </div>
+                        <div class="service-card__body">
+                            <p class="service-card__description">Assistance with transfers and mobility to ensure safety and comfort.</p>
+                            <ul class="service-card__features">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Transfer assistance</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Positioning support</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Exercise encouragement</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card reveal" style="--i:5">
+                        <div class="service-card__header service-card__header--rose">
+                            <span class="service-card__number">06</span>
+                            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+                            <h3 class="service-card__title">Respite Care</h3>
+                        </div>
+                        <div class="service-card__body">
+                            <p class="service-card__description">Short-term stays to give family caregivers a well-deserved break.</p>
+                            <ul class="service-card__features">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Flexible scheduling</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Full care services</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Peace of mind</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="testimonials__header">
+                    <div class="section-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Testimonials</div>
+                    <h2 class="section-title">What Families <span>Say</span></h2>
+                </div>
+            </div>
+            <div class="testimonials__container">
+                <div class="testimonials__track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+                        <p class="testimonial-card__quote">"The care and attention my mother receives at Brightway is exceptional. The staff treats her like family, and I have complete peace of mind."</p>
+                        <div class="testimonial-card__author"><div class="testimonial-card__avatar">SM</div><div class="testimonial-card__info"><h4>Sarah M.</h4><span>Family Member</span></div></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+                        <p class="testimonial-card__quote">"Finding Brightway was a blessing. The home environment is exactly what we wanted for dad - small, personal, and filled with genuine care."</p>
+                        <div class="testimonial-card__author"><div class="testimonial-card__avatar">JT</div><div class="testimonial-card__info"><h4>James T.</h4><span>Son of Resident</span></div></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+                        <p class="testimonial-card__quote">"The 24/7 care and attention to detail gives our family such peace of mind. We couldn't have asked for a better place for grandma."</p>
+                        <div class="testimonial-card__author"><div class="testimonial-card__avatar">LK</div><div class="testimonial-card__info"><h4>Lisa K.</h4><span>Granddaughter</span></div></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+                        <p class="testimonial-card__quote">"Professional, warm, and truly caring. Brightway has exceeded all our expectations in providing quality care for our loved one."</p>
+                        <div class="testimonial-card__author"><div class="testimonial-card__avatar">MR</div><div class="testimonial-card__info"><h4>Michael R.</h4><span>Family Member</span></div></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+                        <p class="testimonial-card__quote">"We visited many facilities before finding Brightway. The difference is night and day - this truly feels like a home, not an institution."</p>
+                        <div class="testimonial-card__author"><div class="testimonial-card__avatar">AP</div><div class="testimonial-card__info"><h4>Amanda P.</h4><span>Daughter</span></div></div>
+                    </div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+                        <p class="testimonial-card__quote">"The care and attention my mother receives at Brightway is exceptional. The staff treats her like family, and I have complete peace of mind."</p>
+                        <div class="testimonial-card__author"><div class="testimonial-card__avatar">SM</div><div class="testimonial-card__info"><h4>Sarah M.</h4><span>Family Member</span></div></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+                        <p class="testimonial-card__quote">"Finding Brightway was a blessing. The home environment is exactly what we wanted for dad - small, personal, and filled with genuine care."</p>
+                        <div class="testimonial-card__author"><div class="testimonial-card__avatar">JT</div><div class="testimonial-card__info"><h4>James T.</h4><span>Son of Resident</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why" id="why">
+            <div class="container">
+                <div class="why__header">
+                    <div class="section-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Why Choose Us</div>
+                    <h2 class="section-title">The Brightway <span>Difference</span></h2>
+                </div>
+                <div class="why__grid">
+                    <div class="why-card reveal" style="--i:0">
+                        <span class="why-card__number">01</span>
+                        <div class="why-card__icon why-card__icon--teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                        <h3 class="why-card__title">Home-Like Setting</h3>
+                        <p class="why-card__description">Small, intimate environment with 3-4 residents ensuring personalized attention and a true sense of home.</p>
+                    </div>
+                    <div class="why-card reveal" style="--i:1">
+                        <span class="why-card__number">02</span>
+                        <div class="why-card__icon why-card__icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                        <h3 class="why-card__title">24/7 Availability</h3>
+                        <p class="why-card__description">Round-the-clock supervision and care, providing peace of mind for families at all times.</p>
+                    </div>
+                    <div class="why-card reveal" style="--i:2">
+                        <span class="why-card__number">03</span>
+                        <div class="why-card__icon why-card__icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+                        <h3 class="why-card__title">Person-Centered Care</h3>
+                        <p class="why-card__description">Individualized care plans that respect each resident's dignity, preferences, and independence.</p>
+                    </div>
+                    <div class="why-card reveal" style="--i:3">
+                        <span class="why-card__number">04</span>
+                        <div class="why-card__icon why-card__icon--teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                        <h3 class="why-card__title">Licensed & Safe</h3>
+                        <p class="why-card__description">Fully licensed Adult Family Home meeting all Wisconsin state requirements and safety standards.</p>
+                    </div>
+                    <div class="why-card reveal" style="--i:4">
+                        <span class="why-card__number">05</span>
+                        <div class="why-card__icon why-card__icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                        <h3 class="why-card__title">Trained Caregivers</h3>
+                        <p class="why-card__description">Compassionate, experienced staff dedicated to providing the highest quality of care.</p>
+                    </div>
+                    <div class="why-card reveal" style="--i:5">
+                        <span class="why-card__number">06</span>
+                        <div class="why-card__icon why-card__icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg></div>
+                        <h3 class="why-card__title">Home-Cooked Meals</h3>
+                        <p class="why-card__description">Nutritious, delicious meals prepared fresh daily with attention to dietary needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="cta">
+            <div class="cta__aurora"></div>
+            <div class="container">
+                <div class="cta__content">
+                    <div class="section-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Get in Touch</div>
+                    <h2 class="section-title">Ready to Learn <span>More?</span></h2>
+                    <p class="cta__description">Schedule a tour or speak with our care team to discover how Brightway Home Care can provide the compassionate support your loved one deserves.</p>
+                    <div class="cta__buttons">
+                        <a href="tel:+18477459930" class="cta__btn cta__btn--primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call Now: (847) 745-9930</a>
+                        <a href="https://wa.me/18477459930" class="cta__btn cta__btn--secondary"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>WhatsApp Us</a>
+                    </div>
+                    <div class="cta__info">
+                        <div class="cta__info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>Brightwayhomecarellc@gmail.com</div>
+                        <div class="cta__info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>3610 Spenser Ln, Madison, WI 53704</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="footer__logo">
+                <div class="footer__logo-icon"><img src="/logo.png" alt="Brightway Home Care Logo"></div>
+                <span class="footer__logo-text">Brightway Home Care LLC</span>
+            </a>
+            <p class="footer__tagline">Licensed Adult Family Home in Madison, Wisconsin</p>
+            <p class="footer__copy">&copy; 2024 Brightway Home Care LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load',()=>{
+            setTimeout(()=>{document.getElementById('preloader').classList.add('hidden')},800)
+        });
+
+        // Scroll Progress with Gradient Animation
+        window.addEventListener('scroll',()=>{
+            const e=document.documentElement,t=(e.scrollTop||document.body.scrollTop)/((e.scrollHeight||document.body.scrollHeight)-e.clientHeight)*100;
+            document.getElementById('scrollProgress').style.width=t+'%'
+        });
+
+        // Header Scroll
+        window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('header--scrolled',window.scrollY>50)});
+
+        // Floating Actions
+        document.getElementById('floatingToggle').addEventListener('click',()=>{document.getElementById('floatingActions').classList.toggle('open')});
+
+        // Close floating actions on outside click
+        document.addEventListener('click',(e)=>{
+            const fa=document.getElementById('floatingActions');
+            if(!fa.contains(e.target)&&fa.classList.contains('open')){fa.classList.remove('open')}
+        });
+
+        // Reveal on Scroll with Stagger
+        const observer=new IntersectionObserver((entries)=>{
+            entries.forEach((entry,index)=>{
+                if(entry.isIntersecting){
+                    setTimeout(()=>{entry.target.classList.add('active')},index*50);
+                }
+            })
+        },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+        // Animated Counter
+        const counterObserver=new IntersectionObserver((entries)=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    const num=entry.target;
+                    const target=parseInt(num.dataset.target)||0;
+                    const prefix=num.dataset.prefix||'';
+                    const suffix=num.dataset.suffix||'';
+                    let current=0;
+                    const increment=target/40;
+                    const timer=setInterval(()=>{
+                        current+=increment;
+                        if(current>=target){current=target;clearInterval(timer)}
+                        num.textContent=prefix+Math.floor(current)+suffix;
+                    },40);
+                    counterObserver.unobserve(num);
+                }
+            })
+        },{threshold:0.5});
+        document.querySelectorAll('.stats__number').forEach(el=>counterObserver.observe(el));
+
+        // Parallax effect on hero particles
+        document.addEventListener('mousemove',(e)=>{
+            const particles=document.querySelectorAll('.hero__particle');
+            const x=(e.clientX-window.innerWidth/2)/50;
+            const y=(e.clientY-window.innerHeight/2)/50;
+            particles.forEach((p,i)=>{
+                const speed=(i+1)*0.5;
+                p.style.transform=`translate(${x*speed}px,${y*speed}px)`;
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+            anchor.addEventListener('click',function(e){
+                e.preventDefault();
+                const target=document.querySelector(this.getAttribute('href'));
+                if(target){target.scrollIntoView({behavior:'smooth',block:'start'})}
+            });
+        });
+    </script>
+</body>
+</html>

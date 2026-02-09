@@ -44,6 +44,16 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Rewrites for static HTML pages
+  async rewrites() {
+    return [
+      {
+        source: '/banner',
+        destination: '/banner/index.html',
+      },
+    ]
+  },
+
   // Security headers
   async headers() {
     return [
