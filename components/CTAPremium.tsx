@@ -64,7 +64,7 @@ export default function CTAPremium({
                 </div>
                 <div>
                   <p className="text-teal-300 text-sm font-medium">Call Us</p>
-                  <p className="text-white font-bold">+1 (847) 745-9930</p>
+                  <p className="text-white font-bold">+1 (608) 620-5890</p>
                 </div>
               </div>
               <p className="text-blue-200 text-sm">Available 24/7 for inquiries</p>
@@ -95,7 +95,7 @@ export default function CTAPremium({
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-300 hover:to-teal-400 text-blue-900 font-bold text-base px-10 py-6 rounded-full shadow-lg hover:shadow-xl hover:shadow-teal-400/25 transform hover:-translate-y-1 transition-all duration-300 shimmer-effect min-w-[220px]">
-                <a href="tel:+18477459930" className="flex items-center justify-center gap-3">
+                <a href="tel:+16086205890" className="flex items-center justify-center gap-3">
                   <Phone className="w-5 h-5" />
                   Call / WhatsApp
                 </a>
@@ -159,12 +159,12 @@ export default function CTAPremium({
 
         {/* Mobile Contact Cards */}
         <div className="lg:hidden mt-12 grid grid-cols-2 gap-4">
-          <a href="tel:+18477459930" className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-colors">
+          <a href="tel:+16086205890" className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-colors">
             <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-500 rounded-xl flex items-center justify-center shadow-lg mb-3">
               <Phone className="w-6 h-6 text-white" />
             </div>
             <p className="text-teal-300 text-xs font-medium">Call Us</p>
-            <p className="text-white font-bold text-sm">+1 (847) 745-9930</p>
+            <p className="text-white font-bold text-sm">+1 (608) 620-5890</p>
           </a>
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
             <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg mb-3">

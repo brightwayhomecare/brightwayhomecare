@@ -73,7 +73,7 @@ Only use these colors across all pages:
 ## Contact Page Requirements
 
 ### Contact Information
-- Phone/WhatsApp: +1 (847) 745-9930 (clickable)
+- Phone/WhatsApp: +1 (608) 620-5890 (clickable)
 - Email: Brightwayhomecarellc@gmail.com (clickable)
 - Address: 3610 Spenser Ln, Madison, WI 53704
 - Google Maps embed
@@ -97,7 +97,7 @@ Only use these colors across all pages:
 
 ## WhatsApp Link Format
 ```
-https://wa.me/18477459930
+https://wa.me/16086205890
 ```
 
 ---

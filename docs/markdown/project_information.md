@@ -69,10 +69,10 @@ Brightway Home Care LLC is a licensed Adult Family Home (AFH) in Madison, Wiscon
 
 | Type | Value |
 |------|-------|
-| Phone/WhatsApp | +1 (847) 745-9930 |
+| Phone/WhatsApp | +1 (608) 620-5890 |
 | Email | Brightwayhomecarellc@gmail.com |
 | Address | 3610 Spenser Ln, Madison, WI 53704 |
-| WhatsApp Link | https://wa.me/18477459930 |
+| WhatsApp Link | https://wa.me/16086205890 |
 
 ---
 

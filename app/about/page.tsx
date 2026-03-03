@@ -112,7 +112,7 @@ export default function AboutPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button asChild size="lg" className="btn-accent text-base px-8">
-                  <a href="tel:+18477459930" className="flex items-center gap-2">
+                  <a href="tel:+16086205890" className="flex items-center gap-2">
                     <Phone className="w-5 h-5" />
                     Call Us Today
                   </a>

@@ -55,8 +55,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'Phone / WhatsApp',
-    value: '+1 (847) 745-9930',
-    href: 'tel:+18477459930',
+    value: '+1 (608) 620-5890',
+    href: 'tel:+16086205890',
     description: 'Call or message us anytime',
     color: 'from-teal-400 to-teal-500',
   },
@@ -203,13 +203,13 @@ export default function ContactPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button asChild size="lg" className="btn-accent text-base px-8">
-                  <a href="tel:+18477459930" className="flex items-center gap-2">
+                  <a href="tel:+16086205890" className="flex items-center gap-2">
                     <Phone className="w-5 h-5" />
                     Call Now
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 text-base px-8">
-                  <a href="https://wa.me/18477459930" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <a href="https://wa.me/16086205890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <MessageCircle className="w-5 h-5" />
                     WhatsApp
                   </a>
@@ -347,7 +347,7 @@ export default function ContactPage() {
                           <p className="text-red-600 text-sm mt-1">{submitError}</p>
                           <p className="text-red-600 text-sm mt-2">
                             You can also reach us at{' '}
-                            <a href="tel:+18477459930" className="underline font-medium">+1 (847) 745-9930</a>
+                            <a href="tel:+16086205890" className="underline font-medium">+1 (608) 620-5890</a>
                           </p>
                         </div>
                       </div>
@@ -562,7 +562,7 @@ export default function ContactPage() {
                   </h3>
                   <div className="space-y-4">
                     <a
-                      href="https://wa.me/18477459930"
+                      href="https://wa.me/16086205890"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all group border border-white/10"
@@ -578,7 +578,7 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href="tel:+18477459930"
+                      href="tel:+16086205890"
                       className="flex items-center gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all group border border-white/10"
                     >
                       <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">

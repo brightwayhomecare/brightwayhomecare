@@ -137,7 +137,7 @@ export default function NotFound() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
-                      href="tel:+18477459930"
+                      href="tel:+16086205890"
                       className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-300 hover:to-teal-400 text-blue-900 font-bold px-6 py-3 rounded-full transition-all"
                     >
                       <Phone className="w-5 h-5" />

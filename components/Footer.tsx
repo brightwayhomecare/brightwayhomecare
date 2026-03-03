@@ -43,19 +43,19 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-blue-200 text-sm">Ready to learn more?</p>
-                <p className="text-white font-bold text-xl">Call us today: +1 (847) 745-9930</p>
+                <p className="text-white font-bold text-xl">Call us today: +1 (608) 620-5890</p>
               </div>
             </div>
             <div className="flex gap-4">
               <a
-                href="tel:+18477459930"
+                href="tel:+16086205890"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-300 hover:to-teal-400 text-blue-900 font-bold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
               >
                 <Phone className="w-5 h-5" />
                 Call Now
               </a>
               <a
-                href="https://wa.me/18477459930"
+                href="https://wa.me/16086205890"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-full border border-white/20 transition-all hover:-translate-y-0.5"
@@ -163,7 +163,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 <li>
                   <a
-                    href="tel:+18477459930"
+                    href="tel:+16086205890"
                     className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-teal-400/30 hover:bg-white/10 transition-all group"
                   >
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
@@ -171,7 +171,7 @@ export default function Footer() {
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 uppercase tracking-wider">Phone / WhatsApp</p>
-                      <p className="font-semibold text-white">+1 (847) 745-9930</p>
+                      <p className="font-semibold text-white">+1 (608) 620-5890</p>
                     </div>
                   </a>
                 </li>

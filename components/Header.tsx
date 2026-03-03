@@ -59,8 +59,8 @@ export default function Header() {
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center gap-3">
               <a
-                href="tel:+18477459930"
-                aria-label="Call Brightway Home Care at +1 847-745-9930"
+                href="tel:+16086205890"
+                aria-label="Call Brightway Home Care at +1 608-620-5890"
                 className="inline-flex items-center gap-2 bg-blue-800 hover:bg-blue-700 text-white font-semibold rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all"
               >
                 <Phone className="w-4 h-4" aria-hidden="true" />
@@ -124,12 +124,12 @@ export default function Header() {
                   {/* Mobile CTA */}
                   <div className="p-6 border-t border-gray-100 space-y-3">
                     <a
-                      href="tel:+18477459930"
-                      aria-label="Call Brightway Home Care at +1 847-745-9930"
+                      href="tel:+16086205890"
+                      aria-label="Call Brightway Home Care at +1 608-620-5890"
                       className="flex items-center justify-center gap-2 w-full py-4 bg-blue-800 text-white font-semibold rounded-full"
                     >
                       <Phone className="w-5 h-5" aria-hidden="true" />
-                      +1 (847) 745-9930
+                      +1 (608) 620-5890
                     </a>
                     <a
                       href="mailto:Brightwayhomecarellc@gmail.com"

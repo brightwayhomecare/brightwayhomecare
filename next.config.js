@@ -40,6 +40,10 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=()',
   },
+  {
+    key: 'Content-Security-Policy',
+    value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://embed.tawk.to https://va.tawk.to; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://embed.tawk.to https://va.tawk.to wss://*.tawk.to; frame-src https://embed.tawk.to; object-src 'none';",
+  },
 ]
 
 /** @type {import('next').NextConfig} */
@@ -80,6 +84,32 @@ const nextConfig = {
 
   // Powered by header removal (security)
   poweredByHeader: false,
+
+  // Enable SWC minification for better performance
+  swcMinify: true,
+
+  // Production optimization
+  productionBrowserSourceMaps: false,
+
+  // Experimental features for better performance
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+  },
+
+  // Webpack configuration
+  webpack: (config, { isServer }) => {
+    // Optimize bundle size
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      }
+    }
+    return config
+  },
 }
 
 module.exports = withPWA(nextConfig)

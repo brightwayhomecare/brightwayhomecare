@@ -375,13 +375,13 @@ export default function TermsPage() {
                     For questions about these Terms of Service, please contact us:
                   </p>
                   <div className="grid sm:grid-cols-3 gap-4">
-                    <a href="tel:+18477459930" className="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all border border-white/10">
+                    <a href="tel:+16086205890" className="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all border border-white/10">
                       <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center">
                         <Phone className="w-5 h-5 text-white" />
                       </div>
                       <div>
                         <p className="text-white font-semibold text-sm">Phone</p>
-                        <p className="text-blue-200 text-xs">+1 (847) 745-9930</p>
+                        <p className="text-blue-200 text-xs">+1 (608) 620-5890</p>
                       </div>
                     </a>
                     <a href="mailto:Brightwayhomecarellc@gmail.com" className="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all border border-white/10">

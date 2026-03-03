@@ -58,11 +58,11 @@ export default function Error({
           <div className="p-4 bg-blue-50 rounded-xl">
             <p className="text-sm text-gray-600 mb-2">Need immediate assistance?</p>
             <a
-              href="tel:+18477459930"
+              href="tel:+16086205890"
               className="inline-flex items-center gap-2 text-blue-800 font-semibold hover:text-teal-600 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              +1 (847) 745-9930
+              +1 (608) 620-5890
             </a>
           </div>
 

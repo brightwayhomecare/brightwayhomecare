@@ -124,7 +124,7 @@ export default function GalleryPage() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
-                  href="tel:+18477459930"
+                  href="tel:+16086205890"
                   aria-label="Schedule a tour"
                   className="inline-flex items-center justify-center gap-2 bg-teal-400 hover:bg-teal-300 text-blue-900 font-semibold rounded-full px-8 py-4 text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
                 >

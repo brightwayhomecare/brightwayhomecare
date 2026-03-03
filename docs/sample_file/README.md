@@ -24,7 +24,7 @@ This is a complete static website for Brightway Home Care LLC, a licensed Adult 
 ✅ Fast loading times
 
 ## Contact Information (Pre-configured)
-- **Phone/WhatsApp**: +1 (847) 745-9930
+- **Phone/WhatsApp**: +1 (608) 620-5890
 - **Email**: Brightwayhomecarellc@gmail.com
 - **Address**: 3610 Spenser Ln, Madison, WI 53704
 

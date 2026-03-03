@@ -9,8 +9,8 @@ export const siteConfig = {
   description: 'Licensed Adult Family Home providing compassionate, person-centered 24/7 care in a small home setting in Madison, Wisconsin.',
 
   // Contact Information
-  phone: process.env.NEXT_PUBLIC_PHONE || '+1 (847) 745-9930',
-  phoneRaw: process.env.NEXT_PUBLIC_PHONE_RAW || '+18477459930',
+  phone: process.env.NEXT_PUBLIC_PHONE || '+1 (608) 620-5890',
+  phoneRaw: process.env.NEXT_PUBLIC_PHONE_RAW || '+16086205890',
   email: process.env.NEXT_PUBLIC_EMAIL || 'Brightwayhomecarellc@gmail.com',
 
   // Address
@@ -23,8 +23,8 @@ export const siteConfig = {
   },
 
   // URLs
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://brightwayhomecare.com',
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL || 'https://wa.me/18477459930',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.brightwayhomecarellc.com',
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL || 'https://wa.me/16086205890',
   googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.123456789!2d-89.123456!3d43.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s3610+Spenser+Ln%2C+Madison%2C+WI+53704!5e0!3m2!1sen!2sus!4v1234567890',
 
   // Social Media (add as needed)

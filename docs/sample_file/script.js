@@ -24,7 +24,7 @@ function handleSubmit(event) {
     messageDiv.innerHTML = `
         <strong>Thank you for your message!</strong><br>
         We've received your inquiry and will get back to you shortly.<br>
-        For immediate assistance, please call or WhatsApp us at <strong>+1 (847) 745-9930</strong>.
+        For immediate assistance, please call or WhatsApp us at <strong>+1 (608) 620-5890</strong>.
     `;
     
     // Reset form

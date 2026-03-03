@@ -340,7 +340,7 @@ export default function FAQPage() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button asChild className="bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-300 hover:to-teal-400 text-blue-900 font-bold px-6">
-                      <a href="tel:+18477459930" className="flex items-center gap-2">
+                      <a href="tel:+16086205890" className="flex items-center gap-2">
                         <Phone className="w-5 h-5" />
                         Call Us Now
                       </a>
