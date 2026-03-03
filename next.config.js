@@ -42,7 +42,7 @@ const securityHeaders = [
   },
   {
     key: 'Content-Security-Policy',
-    value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://embed.tawk.to https://va.tawk.to; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://embed.tawk.to https://va.tawk.to wss://*.tawk.to; frame-src https://embed.tawk.to; object-src 'none';",
+    value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://embed.tawk.to https://va.tawk.to https://*.tawk.to; style-src 'self' 'unsafe-inline' https://embed.tawk.to https://va.tawk.to https://*.tawk.to https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://embed.tawk.to https://*.tawk.to https://fonts.gstatic.com; connect-src 'self' https://embed.tawk.to https://va.tawk.to https://*.tawk.to wss://*.tawk.to; frame-src https://embed.tawk.to https://*.tawk.to; object-src 'none';",
   },
 ]
 

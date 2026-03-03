@@ -10,7 +10,7 @@ import { useEffect } from 'react'
  *
  * Default Configuration:
  * - Property ID: 69a6170c24cf1b1c3d9668f9
- * - Widget ID: 1jiock2j8
+ * - Widget ID: 1jioj9mjg
  *
  * Environment Variables (optional):
  * - NEXT_PUBLIC_TAWK_PROPERTY_ID
@@ -33,7 +33,7 @@ declare global {
 
 export default function TawkToChat() {
   const propertyId = process.env.NEXT_PUBLIC_TAWK_PROPERTY_ID || '69a6170c24cf1b1c3d9668f9'
-  const widgetId = process.env.NEXT_PUBLIC_TAWK_WIDGET_ID || '1jiock2j8'
+  const widgetId = process.env.NEXT_PUBLIC_TAWK_WIDGET_ID || '1jioj9mjg'
 
   useEffect(() => {
     // Only run in browser environment
